@@ -1,637 +1,301 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description"
-    content="Professional portfolio of Alex Carter - Creative Web Developer specializing in premium, high-performance interactive web applications. Explore projects, skills, and experience.">
-  <meta name="keywords"
-    content="Web Developer, Portfolio, Frontend Engineer, React, JavaScript, Fullstack Developer, Alex Carter, Design, UI/UX">
-  <meta name="author" content="Alex Carter">
-  <title>Furqan | Web App Developer & ML Engineer</title>
-
-  <!-- CSS Stylesheet -->
-  <link rel="stylesheet" href="styles.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- <title>Furqan Waris | Full Stack Web Developer</title>
+    <link rel="stylesheet" href="style.css"> -->
+    <link rel="stylesheet" href="styles.css">
+    <!-- FontAwesome for clean iconography -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
+<body>
 
-<body data-theme="dark">
-
-  <!-- Glowing Cursor Follower Background Effect -->
-  <div class="glowing-cursor-follower" id="cursor-glow"></div>
-
-  <!-- Header Section -->
-  <header id="main-header">
-    <div class="container nav-container">
-      <!-- Logo -->
-      <a href="#home" class="logo" id="header-logo">
-        &lt;Alex<span>Carter /&gt;</span>
-      </a>
-
-      <!-- Navigation links -->
-      <nav>
-        <ul class="nav-links" id="nav-menu">
-          <li><a href="#home" class="active">Home</a></li>
-          <li><a href="#about">About</a></li>
-          <li><a href="#skills">Skills</a></li>
-          <li><a href="#projects">Projects</a></li>
-          <li><a href="#contact">Contact</a></li>
+    <!-- Floating Social Sidebar (Left) -->
+    <div class="side-element left-side">
+        <ul>
+            <li><a href="https://github.com/Furqan-w" target="_blank" aria-label="GitHub"><i class="fab fa-github"></i></a></li>
+            <li><a href="https://linkedin.com/in/furqan-waris-b8782426a" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a></li>
         </ul>
-      </nav>
-
-      <!-- Theme Switcher & Mobile Menu Trigger -->
-      <div style="display: flex; align-items: center; gap: 1rem;">
-        <button class="theme-toggle-btn" id="theme-toggle" aria-label="Toggle dark/light mode">
-          <!-- Moon Icon (Dark Mode) -->
-          <svg class="moon-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-            <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z" />
-          </svg>
-          <!-- Sun Icon (Light Mode) -->
-          <svg class="sun-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-            <circle cx="12" cy="12" r="5" />
-            <line x1="12" y1="1" x2="12" y2="3" />
-            <line x1="12" y1="21" x2="12" y2="23" />
-            <line x1="4.22" y1="4.22" x2="5.64" y2="5.64" />
-            <line x1="18.36" y1="18.36" x2="19.78" y2="19.78" />
-            <line x1="1" y1="12" x2="3" y2="12" />
-            <line x1="21" y1="12" x2="23" y2="12" />
-            <line x1="4.22" y1="19.78" x2="5.64" y2="18.36" />
-            <line x1="18.36" y1="5.64" x2="19.78" y2="4.22" />
-          </svg>
-        </button>
-
-        <button class="mobile-menu-btn" id="mobile-menu-toggle" aria-label="Toggle navigation menu">
-          <svg viewBox="0 0 24 24" width="24" height="24" stroke="currentColor" stroke-width="2" fill="none">
-            <line x1="3" y1="12" x2="21" y2="12"></line>
-            <line x1="3" y1="6" x2="21" y2="6"></line>
-            <line x1="3" y1="18" x2="21" y2="18"></line>
-          </svg>
-        </button>
-      </div>
     </div>
-  </header>
 
-  <main>
+    <!-- Floating Email Sidebar (Right) -->
+    <div class="side-element right-side email-side">
+        <a href="mailto:furqanwaris82@gmail.com">furqanwaris82@gmail.com</a>
+    </div>
+
+    <!-- Header / Navigation -->
+    <header>
+        <div class="logo">FW<span>.</span></div>
+        <nav>
+            <ul>
+                <li><a href="#hero">Home</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#experience">Experience</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+        <div class="menu-toggle" id="mobile-menu"><i class="fas fa-bars"></i></div>
+    </header>
+
     <!-- Hero Section -->
-    <section id="home" class="hero-wrapper">
-      <canvas id="hero-canvas"></canvas>
-      <div class="container">
-        <div class="hero-content reveal">
-          <span class="hero-greeting">Welcome to my space</span>
-          <h1 class="hero-title">Crafting Premium<br><span class="highlight">Digital Experiences</span></h1>
-          <div class="hero-subtitle">
-            I am a&nbsp;<span id="typewriter-text"></span><span class="typewriter-cursor"></span>
-          </div>
-          <p class="hero-desc">
-            A fullstack software engineer and creative designer who loves building interactive, pixel-perfect, and
-            ultra-high-performance web products that live on the internet.
-          </p>
-          <div class="hero-actions">
-            <a href="#projects" class="btn btn-primary">
-              View My Work
-              <svg viewBox="0 0 24 24" width="20" height="20" stroke="currentColor" stroke-width="2.5" fill="none"
-                style="margin-left: 0.2rem;">
-                <line x1="5" y1="12" x2="19" y2="12"></line>
-                <polyline points="12 5 19 12 12 19"></polyline>
-              </svg>
-            </a>
-            <a href="#contact" class="btn btn-secondary">Let's Connect</a>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- About Section -->
-    <section id="about" class="container">
-      <div class="section-header reveal">
-        <span class="section-tag">About Me</span>
-        <h2 class="section-title">My Story & Journey</h2>
-        <p class="section-desc">Get to know the developer behind the code, my philosophy, and the path that brought me
-          here.</p>
-      </div>
-
-      <div class="about-grid">
-        <!-- Interactive Avatar frame -->
-        <div class="about-img-container reveal">
-          <div class="about-img-frame">
-            <div class="about-img-content">
-              <!-- Visual Tech Avatar Concept (Pure CSS/SVG code representation) -->
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1" stroke-linecap="round">
-                <circle cx="12" cy="12" r="10" stroke="url(#avatar-grad)" stroke-width="1.5" />
-                <path d="M8 14s1.5 2 4 2 4-2 4-2" stroke="currentColor" stroke-width="1.5" />
-                <circle cx="9" cy="9" r="1" fill="currentColor" />
-                <circle cx="15" cy="9" r="1" fill="currentColor" />
-                <path d="M12 11v3" stroke="currentColor" stroke-width="1.5" />
-                <path d="M4 19c0-2 4-4 8-4s8 2 8 4" stroke="currentColor" stroke-width="1.5" />
-                <defs>
-                  <linearGradient id="avatar-grad" x1="0%" y1="0%" x2="100%" y2="100%">
-                    <stop offset="0%" stop-color="var(--accent-primary)" />
-                    <stop offset="100%" stop-color="var(--accent-secondary)" />
-                  </linearGradient>
-                </defs>
-              </svg>
+    <section id="hero" class="hero-section">
+        <div class="hero-content">
+            <p class="subtitle">Hi, my name is</p>
+            <h1 class="title">Furqan Waris<span>.</span></h1>
+            <h2 class="tagline">I build intelligent, scalable applications.</h2>
+            <p class="description">
+                I am a Developer specializing in Full Stack Web Development (MERN), Machine Learning, and Browser Extensions. I build secure backend architectures, predictive AI models, and user-centric web tools.
+            </p>
+            <div class="hero-cta">
+                <a href="#projects" class="btn btn-primary">View My Work</a>
+                <a href="#contact" class="btn btn-secondary">Get In Touch</a>
             </div>
-          </div>
         </div>
-
-        <!-- Description & Numbers -->
-        <div class="reveal reveal-delay-1">
-          <h3 style="font-size: 1.8rem; margin-bottom: 1.5rem;">Designing systems, writing performance code</h3>
-          <p style="color: var(--text-secondary); margin-bottom: 1.5rem;">
-            I am a fullstack web developer located in California, with a deep passion for creating interfaces that feel
-            intuitive and engaging. I enjoy bridges that connect sleek, artistic designs with powerful, scalable
-            back-end systems.
-          </p>
-          <p style="color: var(--text-secondary); margin-bottom: 2rem;">
-            When I'm not writing code, I research web interactions, design interactive canvas animations, and contribute
-            to open-source tools. I believe that performance, responsiveness, and outstanding aesthetics are not
-            options, but fundamentals.
-          </p>
-
-          <div class="about-stats">
-            <div class="glass-card stat-item">
-              <div class="stat-number" data-target="4">0</div>
-              <div class="stat-label">Years of Exp.</div>
-            </div>
-            <div class="glass-card stat-item">
-              <div class="stat-number" data-target="24">0</div>
-              <div class="stat-label">Projects Built</div>
-            </div>
-            <div class="glass-card stat-item">
-              <div class="stat-number" data-target="15">0</div>
-              <div class="stat-label">Happy Clients</div>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <!-- Experience & Education Timeline -->
-      <div class="timeline reveal">
-        <h3 style="font-size: 1.8rem; margin-bottom: 3rem; text-align: center; font-family: 'Outfit', sans-serif;">Work
-          Experience & Education</h3>
-
-        <div class="timeline-item">
-          <div class="timeline-dot"></div>
-          <div class="timeline-date">2024 - Present</div>
-          <h4 class="timeline-title">Lead Frontend Engineer</h4>
-          <div class="timeline-company">Nebula Tech Labs</div>
-          <p class="timeline-desc">Responsible for architecture and deployment of critical enterprise applications.
-            Built high-fidelity dashboards using React and D3.js, boosting user engagement by 40%.</p>
-        </div>
-
-        <div class="timeline-item">
-          <div class="timeline-dot"></div>
-          <div class="timeline-date">2022 - 2024</div>
-          <h4 class="timeline-title">Full Stack Developer</h4>
-          <div class="timeline-company">PixelCraft Studios</div>
-          <p class="timeline-desc">Developed and maintained cloud-first applications using Node.js, Express, and
-            PostgreSQL. Created responsive customer-facing web applications with interactive checkout flows.</p>
-        </div>
-
-        <div class="timeline-item">
-          <div class="timeline-dot"></div>
-          <div class="timeline-date">2018 - 2022</div>
-          <h4 class="timeline-title">BS in Computer Science & Engineering</h4>
-          <div class="timeline-company">Pacific Technological University</div>
-          <p class="timeline-desc">Graduated with Honors. Specialized in software architecture, web development
-            foundations, algorithmic complexities, and human-computer interactions (HCI).</p>
-        </div>
-      </div>
-    </section>
-
-    <!-- Skills Section -->
-    <section id="skills" style="background: hsla(222, 47%, 2%, 0.2);">
-      <div class="container">
-        <div class="section-header reveal">
-          <span class="section-tag">Expertise</span>
-          <h2 class="section-title">My Tech Stack</h2>
-          <p class="section-desc">A deep dive into the technologies, libraries, and languages I command to bring designs
-            to life.</p>
-        </div>
-
-        <div class="skills-categories">
-          <!-- Category 1: Frontend -->
-          <div class="glass-card skills-category reveal">
-            <h3>
-              Frontend
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                <polygon points="12 2 2 7 12 12 22 7 12 2" />
-                <polyline points="2 17 12 22 22 17" />
-                <polyline points="2 12 12 17 22 12" />
-              </svg>
-            </h3>
-            <div class="skills-list">
-              <div class="skill-bar-wrapper">
-                <div class="skill-info">
-                  <span class="skill-name">HTML5 / CSS3 / SASS</span>
-                  <span class="skill-percentage">95%</span>
-                </div>
-                <div class="skill-track">
-                  <div class="skill-progress" data-percent="95%"></div>
-                </div>
-              </div>
-              <div class="skill-bar-wrapper">
-                <div class="skill-info">
-                  <span class="skill-name">JavaScript (ES6+)</span>
-                  <span class="skill-percentage">90%</span>
-                </div>
-                <div class="skill-track">
-                  <div class="skill-progress" data-percent="90%"></div>
-                </div>
-              </div>
-              <div class="skill-bar-wrapper">
-                <div class="skill-info">
-                  <span class="skill-name">React / Next.js</span>
-                  <span class="skill-percentage">88%</span>
-                </div>
-                <div class="skill-track">
-                  <div class="skill-progress" data-percent="88%"></div>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <!-- Category 2: Backend -->
-          <div class="glass-card skills-category reveal reveal-delay-1">
-            <h3>
-              Backend
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                <rect x="2" y="2" width="20" height="8" rx="2" ry="2" />
-                <rect x="2" y="14" width="20" height="8" rx="2" ry="2" />
-                <line x1="6" y1="6" x2="6.01" y2="6" />
-                <line x1="6" y1="18" x2="6.01" y2="18" />
-              </svg>
-            </h3>
-            <div class="skills-list">
-              <div class="skill-bar-wrapper">
-                <div class="skill-info">
-                  <span class="skill-name">Node.js / Express</span>
-                  <span class="skill-percentage">85%</span>
-                </div>
-                <div class="skill-track">
-                  <div class="skill-progress" data-percent="85%"></div>
-                </div>
-              </div>
-              <div class="skill-bar-wrapper">
-                <div class="skill-info">
-                  <span class="skill-name">PostgreSQL / MongoDB</span>
-                  <span class="skill-percentage">80%</span>
-                </div>
-                <div class="skill-track">
-                  <div class="skill-progress" data-percent="80%"></div>
-                </div>
-              </div>
-              <div class="skill-bar-wrapper">
-                <div class="skill-info">
-                  <span class="skill-name">RESTful APIs / GraphQL</span>
-                  <span class="skill-percentage">85%</span>
-                </div>
-                <div class="skill-track">
-                  <div class="skill-progress" data-percent="85%"></div>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <!-- Category 3: Design & Tools -->
-          <div class="glass-card skills-category reveal reveal-delay-2">
-            <h3>
-              Design & Devops
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                <path
-                  d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z" />
-              </svg>
-            </h3>
-            <div class="skills-list">
-              <div class="skill-bar-wrapper">
-                <div class="skill-info">
-                  <span class="skill-name">Git & Github Workflow</span>
-                  <span class="skill-percentage">90%</span>
-                </div>
-                <div class="skill-track">
-                  <div class="skill-progress" data-percent="90%"></div>
-                </div>
-              </div>
-              <div class="skill-bar-wrapper">
-                <div class="skill-info">
-                  <span class="skill-name">Figma / UI Design</span>
-                  <span class="skill-percentage">85%</span>
-                </div>
-                <div class="skill-track">
-                  <div class="skill-progress" data-percent="85%"></div>
-                </div>
-              </div>
-              <div class="skill-bar-wrapper">
-                <div class="skill-info">
-                  <span class="skill-name">Docker / AWS</span>
-                  <span class="skill-percentage">75%</span>
-                </div>
-                <div class="skill-track">
-                  <div class="skill-progress" data-percent="75%"></div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
     </section>
 
     <!-- Projects Section -->
-    <section id="projects" class="container">
-      <div class="section-header reveal">
-        <span class="section-tag">My Work</span>
+    <section id="projects" class="section">
         <h2 class="section-title">Featured Projects</h2>
-        <p class="section-desc">A selection of recent applications combining structural engineering with modern creative
-          designs.</p>
-      </div>
+        <div class="projects-grid">
+            
+            <!-- Project 1 -->
+            <div class="project-card">
+                <div class="project-header">
+                    <i class="folder-icon far fa-folder"></i>
+                    <div class="project-links">
+                        <a href="https://github.com/Furqan-w" target="_blank"><i class="fab fa-github"></i></a>
+                    </div>
+                </div>
+                <h3>AI-Driven Automated Grading Platform</h3>
+                <p>Integrated an LLM-based code evaluation system constrained by deterministic scoring rules. Processes extracted code with course-specific rubrics using a Python-based AI grading engine connected to Node.js.</p>
+                <ul class="project-tech">
+                    <li>Node.js</li>
+                    <li>Python</li>
+                    <li>MongoDB</li>
+                    <li>AI Engine</li>
+                </ul>
+            </div>
 
-      <!-- Projects Category Filters -->
-      <div class="project-filters reveal">
-        <button class="filter-btn active" data-filter="all">All Projects</button>
-        <button class="filter-btn" data-filter="frontend">Frontend</button>
-        <button class="filter-btn" data-filter="backend">Backend</button>
-      </div>
+            <!-- Project 2 -->
+            <div class="project-card">
+                <div class="project-header">
+                    <i class="folder-icon far fa-folder"></i>
+                    <div class="project-links">
+                        <a href="https://github.com/Furqan-w" target="_blank"><i class="fab fa-github"></i></a>
+                    </div>
+                </div>
+                <h3>Full-Stack Marketplace Infrastructure</h3>
+                <p>Engineered a property-sharing marketplace with integrated booking management logic. Features JWT-based session management and Express middleware for multi-role authentication between hosts and guests.</p>
+                <ul class="project-tech">
+                    <li>MERN Stack</li>
+                    <li>JWT</li>
+                    <li>Express.js</li>
+                </ul>
+            </div>
 
-      <!-- Projects Grid -->
-      <div class="projects-grid">
-        <!-- Project Card 1 (Frontend) -->
-        <article class="glass-card project-card reveal" data-category="frontend">
-          <div class="project-img-container">
-            <div class="project-mock-img project-img-accent-1">
-              <!-- Premium Custom Visual Concept Icon (Satisfying 'No Placeholders' rule) -->
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-                <circle cx="12" cy="12" r="8" />
-                <path
-                  d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41" />
-              </svg>
+            <!-- Project 3 -->
+            <div class="project-card">
+                <div class="project-header">
+                    <i class="folder-icon far fa-folder"></i>
+                    <div class="project-links">
+                        <a href="https://github.com/Furqan-w" target="_blank"><i class="fab fa-github"></i></a>
+                    </div>
+                </div>
+                <h3>Password Manager</h3>
+                <p>Architected a scalable set of REST APIs utilizing a modular Node.js/Express.js backend architecture. Secured end-to-end data confidentiality by implementing client-side and server-side AES encryption.</p>
+                <ul class="project-tech">
+                    <li>React</li>
+                    <li>Node.js</li>
+                    <li>AES Encryption</li>
+                </ul>
             </div>
-            <div class="project-overlay">
-              <a href="https://github.com" target="_blank" class="project-action-btn" aria-label="View source code">
-                <svg viewBox="0 0 24 24">
-                  <path
-                    d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12" />
-                </svg>
-              </a>
-              <a href="https://example.com" target="_blank" class="project-action-btn" aria-label="View demo">
-                <svg viewBox="0 0 24 24">
-                  <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6M15 3h6v6M10 14L21 3" />
-                </svg>
-              </a>
-            </div>
-          </div>
-          <div class="project-info">
-            <div class="project-tags">
-              <span class="project-tag">React</span>
-              <span class="project-tag secondary">Three.js</span>
-            </div>
-            <h3 class="project-title">Helios Interactive System</h3>
-            <p class="project-desc">A immersive 3D dashboard displaying live solar radiation and atmospheric data using
-              WebGL particles and custom state management.</p>
-            <div class="project-links">
-              <a href="https://github.com" target="_blank" class="project-link">
-                <svg viewBox="0 0 24 24">
-                  <path
-                    d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12" />
-                </svg>
-                Code
-              </a>
-              <a href="https://example.com" target="_blank" class="project-link">
-                <svg viewBox="0 0 24 24">
-                  <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6M15 3h6v6M10 14L21 3" />
-                </svg>
-                Demo
-              </a>
-            </div>
-          </div>
-        </article>
 
-        <!-- Project Card 2 (Backend) -->
-        <article class="glass-card project-card reveal reveal-delay-1" data-category="backend">
-          <div class="project-img-container">
-            <div class="project-mock-img project-img-accent-2">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-                <rect x="2" y="3" width="20" height="14" rx="2" ry="2" />
-                <line x1="8" y1="21" x2="16" y2="21" />
-                <line x1="12" y1="17" x2="12" y2="21" />
-              </svg>
+            <!-- Project 4: Chrome Extension -->
+            <div class="project-card">
+                <div class="project-header">
+                    <i class="folder-icon far fa-folder"></i>
+                    <div class="project-links">
+                        <a href="https://github.com/Furqan-w" target="_blank"><i class="fab fa-github"></i></a>
+                    </div>
+                </div>
+                <h3>AI Web Summarizer Chrome Extension</h3>
+                <p>Developed a lightweight Chrome extension leveraging Manifest V3 to summarize web articles. Utilizes background service workers and content scripts to interact with an LLM API and render summaries.</p>
+                <ul class="project-tech">
+                    <li>Chrome API</li>
+                    <li>JavaScript</li>
+                    <li>HTML/CSS</li>
+                    <li>LLM Integration</li>
+                </ul>
             </div>
-            <div class="project-overlay">
-              <a href="https://github.com" target="_blank" class="project-action-btn" aria-label="View source code">
-                <svg viewBox="0 0 24 24">
-                  <path
-                    d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12" />
-                </svg>
-              </a>
-              <a href="https://example.com" target="_blank" class="project-action-btn" aria-label="View demo">
-                <svg viewBox="0 0 24 24">
-                  <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6M15 3h6v6M10 14L21 3" />
-                </svg>
-              </a>
-            </div>
-          </div>
-          <div class="project-info">
-            <div class="project-tags">
-              <span class="project-tag">NodeJS</span>
-              <span class="project-tag secondary">Redis</span>
-            </div>
-            <h3 class="project-title">Aegis Auth Gateway</h3>
-            <p class="project-desc">A highly scalable authentication gateway supporting custom JWT signatures,
-              multi-region database sync, and rate limiting rules.</p>
-            <div class="project-links">
-              <a href="https://github.com" target="_blank" class="project-link">
-                <svg viewBox="0 0 24 24">
-                  <path
-                    d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12" />
-                </svg>
-                Code
-              </a>
-              <a href="https://example.com" target="_blank" class="project-link">
-                <svg viewBox="0 0 24 24">
-                  <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6M15 3h6v6M10 14L21 3" />
-                </svg>
-                Demo
-              </a>
-            </div>
-          </div>
-        </article>
 
-        <!-- Project Card 3 (Frontend) -->
-        <article class="glass-card project-card reveal reveal-delay-2" data-category="frontend">
-          <div class="project-img-container">
-            <div class="project-mock-img project-img-accent-3">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-                <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5" />
-              </svg>
+            <!-- Project 5: Machine Learning -->
+            <div class="project-card">
+                <div class="project-header">
+                    <i class="folder-icon far fa-folder"></i>
+                    <div class="project-links">
+                        <a href="https://github.com/Furqan-w" target="_blank"><i class="fab fa-github"></i></a>
+                    </div>
+                </div>
+                <h3>Skin Cancer Detection via CNN</h3>
+                <p>Engineered a deep learning Convolutional Neural Network (CNN) model to detect and classify multi-class skin lesions from dermoscopic images. Addressed high dataset imbalance using specialized data augmentation and customized weighted loss functions.</p>
+                <ul class="project-tech">
+                    <li>Python</li>
+                    <li>PyTorch</li>
+                    <li>OpenCV</li>
+                    <li>Deep Learning</li>
+                </ul>
             </div>
-            <div class="project-overlay">
-              <a href="https://github.com" target="_blank" class="project-action-btn" aria-label="View source code">
-                <svg viewBox="0 0 24 24">
-                  <path
-                    d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12" />
-                </svg>
-              </a>
-              <a href="https://example.com" target="_blank" class="project-action-btn" aria-label="View demo">
-                <svg viewBox="0 0 24 24">
-                  <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6M15 3h6v6M10 14L21 3" />
-                </svg>
-              </a>
+
+            <!-- Project 6: Machine Learning -->
+            <div class="project-card">
+                <div class="project-header">
+                    <i class="folder-icon far fa-folder"></i>
+                    <div class="project-links">
+                        <a href="https://github.com/Furqan-w" target="_blank"><i class="fab fa-github"></i></a>
+                    </div>
+                </div>
+                <h3>Breast Cancer Detection System</h3>
+                <p>Developed a predictive machine learning classifier to identify malignant and benign breast tumors from clinical diagnostic data. Compared and optimized multiple models (Logistic Regression, SVM, and Random Forests) using cross-validation.</p>
+                <ul class="project-tech">
+                    <li>Python</li>
+                    <li>Scikit-Learn</li>
+                    <li>Pandas</li>
+                    <li>Data Analysis</li>
+                </ul>
             </div>
-          </div>
-          <div class="project-info">
-            <div class="project-tags">
-              <span class="project-tag">HTML5/CSS3</span>
-              <span class="project-tag secondary">Canvas</span>
+
+            <!-- Project 7: Machine Learning -->
+            <div class="project-card">
+                <div class="project-header">
+                    <i class="folder-icon far fa-folder"></i>
+                    <div class="project-links">
+                        <a href="https://github.com/Furqan-w" target="_blank"><i class="fab fa-github"></i></a>
+                    </div>
+                </div>
+                <h3>Sonar Mine vs Rock Predictor</h3>
+                <p>Built a classification model to process high-dimensional sonar signals and predict whether objects are underwater rocks or metallic mines. Performed extensive feature engineering, scaling, and hyperparameter tuning.</p>
+                <ul class="project-tech">
+                    <li>Python</li>
+                    <li>Scikit-Learn</li>
+                    <li>NumPy</li>
+                    <li>Signal Data</li>
+                </ul>
             </div>
-            <h3 class="project-title">Veridian Canvas Engine</h3>
-            <p class="project-desc">A micro-framework enabling smooth web page transition structures and custom physics
-              simulations in the HTML5 canvas layer.</p>
-            <div class="project-links">
-              <a href="https://github.com" target="_blank" class="project-link">
-                <svg viewBox="0 0 24 24">
-                  <path
-                    d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12" />
-                </svg>
-                Code
-              </a>
-              <a href="https://example.com" target="_blank" class="project-link">
-                <svg viewBox="0 0 24 24">
-                  <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6M15 3h6v6M10 14L21 3" />
-                </svg>
-                Demo
-              </a>
+
+        </div>
+    </section>
+
+    <!-- Experience & Education -->
+    <!-- <section id="experience" class="section bg-light-dark">
+        <h2 class="section-title">Timeline</h2>
+        <div class="timeline">
+            <div class="timeline-item">
+                <div class="timeline-dot"></div>
+                <div class="timeline-date">May 2022 - Aug 2022</div>
+                <div class="timeline-content">
+                    <h3>Teaching Assistant</h3>
+                    <h4>University of Central Punjab</h4>
+                    <p>Mentored 50+ students in programming fundamentals, logic building, and flowchart design, improving overall lab performance metrics by 20%.</p>
+                </div>
             </div>
-          </div>
-        </article>
-      </div>
+            <div class="timeline-item">
+                <div class="timeline-dot"></div>
+                <div class="timeline-date">Graduated Feb 2026</div>
+                <div class="timeline-content">
+                    <h3>Bachelor of Computer Science</h3>
+                    <h4>University of Central Punjab, Lahore</h4>
+                    <p>Completed intensive training in computer science foundations and application development with an outstanding CGPA of 3.51.</p>
+                </div>
+            </div>
+        </div>
+    </section> -->
+
+    <!-- Skills Section -->
+    <section id="skills" class="section">
+        <h2 class="section-title">Technical Mastery</h2>
+        <div class="skills-container">
+            <div class="skill-category">
+                <h3>Languages & Frontend</h3>
+                <ul class="skill-tags">
+                    <li>JavaScript</li>
+                    <li>Python</li>
+                    <li>C / C++</li>
+                    <li>HTML5</li>
+                    <li>CSS3</li>
+                    <li>TailwindCSS</li>
+                    <li>React.js</li>
+                </ul>
+            </div>
+            <div class="skill-category">
+                <h3>Backend & DB</h3>
+                <ul class="skill-tags">
+                    <li>Node.js</li>
+                    <li>Express.js</li>
+                    <li>MongoDB</li>
+                    <li>SQL</li>
+                    <li>RESTful APIs</li>
+                    <li>JWT</li>
+                </ul>
+            </div>
+            <div class="skill-category">
+                <h3>Machine Learning & AI</h3>
+                <ul class="skill-tags">
+                    <li>TensorFlow</li>
+                    <li>PyTorch</li>
+                    <li>Scikit-Learn</li>
+                    <li>Pandas</li>
+                    <li>NumPy</li>
+                    <li>OpenCV</li>
+                    <li>LLM Integration</li>
+                </ul>
+            </div>
+            <div class="skill-category">
+                <h3>Extensions & Tools</h3>
+                <ul class="skill-tags">
+                    <li>Chrome Extension API</li>
+                    <li>Manifest V3</li>
+                    <li>AES Encryption</li>
+                    <li>Git & GitHub</li>
+                    <li>Agile</li>
+                    <li>UML Modeling</li>
+                </ul>
+            </div>
+        </div>
     </section>
 
     <!-- Contact Section -->
-    <section id="contact" class="container">
-      <div class="section-header reveal">
-        <span class="section-tag">Get In Touch</span>
-        <h2 class="section-title">Let's Create Together</h2>
-        <p class="section-desc">Have a project, a partnership proposal, or just want to say hi? Send a message and let's
-          start.</p>
-      </div>
-
-      <div class="contact-grid">
-        <!-- Direct contact cards -->
-        <div class="contact-info">
-          <!-- Card 1: Email -->
-          <div class="glass-card contact-info-card reveal">
-            <div class="contact-icon-box">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" />
-                <polyline points="22,6 12,13 2,6" />
-              </svg>
+    <section id="contact" class="section contact-section">
+        <h2 class="section-title">Get In Touch</h2>
+        <p class="contact-text">I am currently looking for new opportunities and engineering challenges. Whether you have a question or just want to say hello, my inbox is open!</p>
+        
+        <div class="contact-methods">
+            <div class="contact-method-card">
+                <i class="far fa-envelope"></i>
+                <h4>Email</h4>
+                <a href="mailto:furqanwaris82@gmail.com">furqanwaris82@gmail.com</a>
             </div>
-            <div class="contact-details">
-              <h4>Email</h4>
-              <p>alex.carter@example.com</p>
+            <div class="contact-method-card">
+                <i class="fab fa-linkedin-in"></i>
+                <h4>LinkedIn</h4>
+                <a href="https://linkedin.com/in/furqan-waris-b8782426a" target="_blank">LinkedIn Profile</a>
             </div>
-          </div>
-
-          <!-- Card 2: Phone -->
-          <div class="glass-card contact-info-card reveal reveal-delay-1">
-            <div class="contact-icon-box">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                <path
-                  d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z" />
-              </svg>
+            <div class="contact-method-card">
+                <i class="fab fa-github"></i>
+                <h4>GitHub</h4>
+                <a href="https://github.com/Furqan-w" target="_blank">github.com/Furqan-w</a>
             </div>
-            <div class="contact-details">
-              <h4>Phone</h4>
-              <p>+1 (555) 019-2834</p>
-            </div>
-          </div>
-
-          <!-- Card 3: Location -->
-          <div class="glass-card contact-info-card reveal reveal-delay-2">
-            <div class="contact-icon-box">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" />
-                <circle cx="12" cy="10" r="3" />
-              </svg>
-            </div>
-            <div class="contact-details">
-              <h4>Location</h4>
-              <p>San Francisco, California</p>
-            </div>
-          </div>
         </div>
 
-        <!-- Contact Form Card -->
-        <div class="glass-card contact-form-container reveal reveal-delay-1">
-          <form class="contact-form" id="portfolio-contact-form">
-            <div class="form-group">
-              <input type="text" id="form-name" class="form-input" placeholder=" " required autocomplete="name">
-              <label for="form-name" class="form-label">Full Name</label>
-              <div class="form-input-focus-line"></div>
-            </div>
-
-            <div class="form-group">
-              <input type="email" id="form-email" class="form-input" placeholder=" " required autocomplete="email">
-              <label for="form-email" class="form-label">Email Address</label>
-              <div class="form-input-focus-line"></div>
-            </div>
-
-            <div class="form-group">
-              <textarea id="form-message" class="form-input" rows="4" placeholder=" " required
-                style="resize: none;"></textarea>
-              <label for="form-message" class="form-label">Your Message</label>
-              <div class="form-input-focus-line"></div>
-            </div>
-
-            <button type="submit" class="btn btn-primary" style="margin-top: 1rem;">
-              Send Message
-              <svg viewBox="0 0 24 24" width="20" height="20" stroke="currentColor" stroke-width="2.5" fill="none"
-                style="margin-left: 0.2rem;">
-                <line x1="22" y1="2" x2="11" y2="13"></line>
-                <polygon points="22 2 15 22 11 13 2 9 22 2"></polygon>
-              </svg>
-            </button>
-
-            <div class="form-feedback" id="form-feedback-msg"></div>
-          </form>
-        </div>
-      </div>
+        <a href="mailto:furqanwaris82@gmail.com" class="btn btn-primary email-btn"><i class="far fa-envelope"></i> Message Me</a>
     </section>
-  </main>
 
-  <!-- Footer Section -->
-  <footer>
-    <div class="container footer-container">
-      <div class="footer-copy">
-        &copy; <span id="footer-year">2026</span> Alex Carter. All rights reserved.
-      </div>
+    <!-- Footer -->
+    <footer>
+        <p>Designed & Built by Furqan Waris &copy; 2026</p>
+    </footer>
 
-      <!-- Social icons inline SVGs -->
-      <div class="social-links">
-        <a href="https://github.com" target="_blank" class="social-link" aria-label="GitHub Profile">
-          <svg viewBox="0 0 24 24">
-            <path
-              d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12" />
-          </svg>
-        </a>
-        <a href="https://linkedin.com" target="_blank" class="social-link" aria-label="LinkedIn Profile">
-          <svg viewBox="0 0 24 24">
-            <path
-              d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.779-1.75-1.75s.784-1.75 1.75-1.75 1.75.779 1.75 1.75-.784 1.75-1.75 1.75zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z" />
-          </svg>
-        </a>
-        <a href="https://twitter.com" target="_blank" class="social-link" aria-label="Twitter Profile">
-          <!-- X Logo (SVG format) -->
-          <svg viewBox="0 0 24 24">
-            <path
-              d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" />
-          </svg>
-        </a>
-      </div>
-    </div>
-  </footer>
-
-  <!-- Script Logic -->
-  <script src="script.js"></script>
+    <script src="script.js"></script>
 </body>
-
 </html>
