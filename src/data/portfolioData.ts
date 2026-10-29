@@ -220,32 +220,7 @@ export const PORTFOLIO_DATA: PortfolioData = {
     { text: "Master hand-wheel ceramic pottery", done: false },
     { text: "Build a product used by over 10 million people", done: true },
   ],
-  testimonials: [
-    {
-      quote:
-        "You have got an unstoppable attitude towards tackling challenges! I've seen you as a total problem-solver - which makes you an amazing engineer. You never say no to an idea without giving it a shot. Your approach to life and work is truly inspiring, Furqan!",
-      name: "Shalini",
-      role: "Creative Head",
-      company: "Dimore Surfaces",
-      avatarText: "S",
-    },
-    {
-      quote:
-        "I had the pleasure of working with Furqan during his time collaborating with our engineering team. He demonstrated impressive adaptability and quickly mastered complex AI tools and pipelines. His proactive approach enhanced our team's delivery and reliability. Furqan's enthusiasm made a tremendous positive impact!",
-      name: "Ravin",
-      role: "Engineering Manager",
-      company: "Techroniqs",
-      avatarText: "R",
-    },
-    {
-      quote:
-        "Furqan was great to work with! He is very receptive to feedback and is open to collaboration. He worked on an intelligent system project with me and was always available whenever I needed a quick query or an update. Will 100% recommend hiring him!",
-      name: "Alekhya",
-      role: "Product Lead",
-      company: "QTO Dev",
-      avatarText: "A",
-    },
-  ],
+  testimonials: [],
   projects: [
     {
       slug: "galaxy-knowledge",

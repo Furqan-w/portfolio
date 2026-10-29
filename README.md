@@ -1,45 +1,40 @@
-# Nitin Sangwan's Portfolio — Next.js Edition
+# Furqan Waris — AI Engineer Portfolio
 
-A complete, pixel-crafted recreation of **[Nitin Sangwan's Portfolio](https://nitinsangwan.com/)** built with **Next.js 16 (App Router)**, **TypeScript**, **Tailwind CSS**, and **Framer Motion**.
+A modern, interactive portfolio for **Furqan Waris** (Full-Stack AI Engineer) built with **Next.js 16 (App Router)**, **TypeScript**, **Tailwind CSS**, and **Framer Motion**.
 
 ---
 
-## ✨ Design Aesthetics & System
+## ✨ Features & Design System
 
-- **Warm Paper Canvas Palette**: `#fafbf9` warm eggshell background with `#181616` dark charcoal editorial typography and `#e8e8e8` subtle borders.
+- **Radial Constellation Interactive Canvas**: Pure physics-driven interactive node graph allowing intuitive navigation across projects, technical background, and skills.
 - **Editorial Typography**:
   - `DM Serif Display` (*italic & normal*): Primary headings, editorial quotes, and case study titles.
   - `Inter`: Clean, legible sans-serif for UI, metadata, and body text.
-  - `Caveat`: Handwritten script font for playful notes, stickers, and personality touches (*"Playing right now"*, *"My corner"*).
+  - `Caveat`: Handwritten script font for personal notes and accent touches.
 - **Interactive Bento Widgets**:
-  - **Live Bengaluru Clock** (`Asia/Kolkata` IST) with real-time seconds ticking and animated pulsing status indicator.
-  - **Interactive Audio Widget** ("Playing right now") with play/pause simulation and animated frequency wave bars.
-  - **Watch & Read Popovers**: Curated movie and book recommendations with notes and shuffling.
-  - **Interactive Tool Kit**: Daily tools and skills with hover scale effects.
-  - **Bucket List**: Interactive checklist with completion status.
-- **Floating Pill Navigation**: Dynamic Island-style capsule navbar with spring-animated active tab indicators and mobile drawer menu.
+  - **Live Clock & Status Indicator**: Real-time timezone clock with active availability status.
+  - **Interactive Audio Widget**: Voice AI streaming demo and frequency wave visualization.
+  - **Curated Reading & Watchlist**: Curated technical reads and media.
+  - **Technical Toolkit**: AI frameworks, LLMOps tools, and development stack.
+  - **Interactive Bucket List**: Career goals and milestone checklist.
+- **Single-Page Framer-Style Modal Architecture**: Smooth in-place modal overlays for deep-dive case studies, technical resume, and contact forms.
 
 ---
 
-## 🗂️ Routes & Pages
+## 🚀 Featured Projects
 
-| Route | Page | Description |
+| Project | Domain | Tech Stack |
 |---|---|---|
-| `/` | **Home** | Editorial hero, live clock, selected project bento showcase, interactive widgets, and collaboration CTA. |
-| `/work` | **Work Catalog** | Filterable project catalog (All, Product Design, Web Design, AI & SAAS) with NDA disclosure. |
-| `/about` | **About & Corner** | Personal story, career timeline (Hunar.ai, Unthinkable, Airtribe, Freelance), and client testimonials. |
-| `/resume` | **Interactive Resume** | Printer-friendly CV layout with skill breakdown, direct PDF print trigger, and share link. |
-| `/contact` | **Contact** | Interactive contact form with validation, one-click email copy to clipboard, and social links. |
-| `/voice` | **Case Study: Hunar Voice** | Foundational self-serve voice AI calling dashboard, 4-step pillar breakdown, and pilot metrics. |
-| `/dimore-surfaces` | **Case Study: Dimore Surfaces** | Luxury architectural surface website, curtain reveal hero, and B2B spec request funnel. |
-| `/connect` | **Case Study: Hunar Connect** | Enterprise CRM & frontline workforce lifecycle management system. |
-| `/neha-s-playground` | **Case Study: Neha's Playground** | Valentine's Day voice AI launch campaign with Indian pop art direction. |
-| `/voice-ai-playground` | **Case Study: Voice AI Playground** | Multi-industry zero-friction voice agent testing playground. |
-| `/dental-pms` | **Case Study: Dental PMS** | Modular white-label dental patient management template system. |
+| **Galaxy Knowledge LLM Fine-Tuning** | LLM Fine-Tuning & GenAI | Llama 3, LoRA / PEFT, PyTorch, Hugging Face |
+| **Enterprise ERP AI Agent** | Multi-Agent Systems & Workflows | LangGraph, Langfuse, Python, FastAPI |
+| **AI-Powered HR Recruitment System** | Semantic Search & RAG | Dense Embeddings, BM25 Hybrid Search, MongoDB |
+| **AI-Powered Intelligent Web Scraper** | Data Pipelines & Automation | Playwright, FastAPI, Self-Healing DOM Selectors |
+| **Voice Agent Platform** | Conversational Voice AI | Uplift AI, WebSockets, Audio Streaming, Guardrails |
+| **AI-Powered E-Commerce RAG & LLMOps** | Agentic RAG & Observability | Weaviate, Phoenix AI, Self-Correction Loops |
 
 ---
 
-## 🚀 Getting Started
+## 🛠️ Getting Started
 
 ### 1. Install Dependencies
 ```bash
@@ -60,11 +55,11 @@ npm start
 
 ---
 
-## 🛠️ Tech Stack
+## 🧰 Tech Stack
 
 - **Framework**: Next.js 16 (App Router, Turbopack)
 - **Language**: TypeScript
 - **Styling**: Tailwind CSS
-- **Animations**: Framer Motion
+- **Motion & Interactions**: Framer Motion
 - **Icons**: Lucide React
 - **Typography**: Google Fonts via `next/font/google` (`DM Serif Display`, `Inter`, `Caveat`)

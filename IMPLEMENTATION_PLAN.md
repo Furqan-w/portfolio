@@ -1,47 +1,22 @@
-# Implementation Plan: Click-to-Highlight Child Nodes & Dim Non-Selected Nodes
+# Implementation Plan: Update README for Furqan Waris
 
-## 1. Problem Diagnosis
-In `src/components/RadialConstellationGraph.tsx`:
-1. Highlighting and dimming was previously only attached to temporary hover state (`hoveredIdx`).
-2. There was no `selectedIdx` state. On any pointer release / click, `handlePointerUp` called `setHoveredIdx(null)`, immediately resetting any dimming and highlighting.
-3. When a child node was clicked, it did not get highlighted, and the other nodes did not get dimmed.
-4. Clicking background canvas did not provide a way to clear selection and restore the full constellation.
+## 1. Requirement
+The user confirmed updating `README.md` to replace "Nitin Sangwan's Portfolio" with "Furqan Waris — Portfolio" and align the documentation with Furqan's actual projects and portfolio architecture.
 
-## 2. Solution & Architectural Changes in `RadialConstellationGraph.tsx`
+## 2. Planned Changes to `README.md`
+1. **Title & Header**:
+   - Change `# Nitin Sangwan's Portfolio — Next.js Edition` to `# Furqan Waris — AI Engineer Portfolio`.
+   - Update intro to: "Modern, interactive portfolio for **Furqan Waris** (Full-Stack AI Engineer), built with **Next.js 16 (App Router)**, **TypeScript**, **Tailwind CSS**, and **Framer Motion**."
+2. **Projects Showcase Table**:
+   - Update the projects list in `README.md` to reflect the 6 actual AI & engineering projects:
+     - Galaxy Knowledge LLM Fine-Tuning
+     - Enterprise ERP AI Agent (LangGraph)
+     - AI-Powered HR Recruitment System
+     - AI-Powered Intelligent Web Scraping Platform
+     - Voice Agent Platform
+     - AI-Powered E-Commerce RAG & LLMOps Platform
+   - Remove legacy references to old case studies (`/dental-pms`, etc.).
 
-### A. Persistent Selection State (`selectedIdx`)
-- Introduce `selectedIdx: number | null = null`.
-- Define `activeIdx = hoveredIdx !== null ? hoveredIdx : selectedIdx`.
-- When `activeIdx !== null && activeIdx !== 0`:
-  - **Active / Clicked Child Node (`idx === activeIdx`)**:
-    - Remains at **100% opacity**.
-    - Highlighted with an active accent ring (`ring-2 ring-[#0088ff] ring-offset-2 shadow-md`) around its shape.
-    - Scale micro-enhancement (`scale-105`).
-    - Subtitle is revealed with full opacity (`opacity-100 max-h-6`).
-    - Elevated `zIndex: 40`.
-    - Displays an intuitive, compact action pill `[ Open ↗ ]` allowing one-click opening of the project / section / widget modal.
-  - **Other Child Nodes (`idx !== 0 && idx !== activeIdx`)**:
-    - Dimmed to **`opacity: 0.1`** with smooth CSS transition (`transition-all duration-300`).
-  - **Connecting Lines**:
-    - The line connecting the center starburst to the active child node is **highlighted** (`stroke="#0088ff"`, `strokeWidth={2}`, `strokeOpacity={1}`).
-    - All other connecting lines are **dimmed** (`strokeOpacity={0.04}`).
-
-### B. Interactive Click & Navigation Behavior
-1. **First Click on a Child Node**:
-   - Selects and highlights that child node.
-   - Dims all other child nodes and lines.
-   - Plays the tactile click audio.
-   - Reveals the `[ Open ↗ ]` action badge.
-2. **Second Click / Click on `[ Open ↗ ]` / Double-Click**:
-   - Triggers the corresponding modal action (`onOpenProject`, `onOpenSection`, or `onOpenWidget`).
-3. **Click on Canvas Background or Center**:
-   - Clears `selectedIdx` (`setSelectedIdx(null)`).
-   - Smoothly restores all nodes and lines to full default brightness.
-
-## 3. Verification Plan
-- Click any child node (e.g. "Galaxy Knowledge", "Enterprise ERP", "Work", "Tool Kit").
-- Verify that the clicked child node is highlighted with an accent ring, visible subtitle, and elevated z-index.
-- Verify that all other satellite nodes dim to `0.1` opacity.
-- Verify that the active connecting line highlights in `#0088ff` with width 2, while all other lines dim to `0.04`.
-- Click empty canvas background and verify all nodes and lines return to full visibility.
-- Click the `[ Open ↗ ]` button or click the selected node again and verify the case study / section modal opens smoothly.
+## 3. Verification
+- Verify `README.md` has 0 occurrences of "Nitin" or "Sangwan".
+- Verify all links and project listings match the actual codebase.
