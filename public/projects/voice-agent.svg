@@ -1,0 +1,162 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 900" width="1600" height="900" style="background:#0e0618; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;">
+  <defs>
+    <linearGradient id="purpleGrad" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#c084fc"/>
+      <stop offset="100%" stop-color="#9333ea"/>
+    </linearGradient>
+    <linearGradient id="cardGradVoice" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#1f1133" stop-opacity="0.95"/>
+      <stop offset="100%" stop-color="#150a24" stop-opacity="0.95"/>
+    </linearGradient>
+    <filter id="purpleGlow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="12" result="blur" />
+      <feComposite in="SourceGraphic" in2="blur" operator="over" />
+    </filter>
+  </defs>
+
+  <!-- Background subtle grid -->
+  <pattern id="gridVoice" width="40" height="40" patternUnits="userSpaceOnUse">
+    <path d="M 40 0 L 0 0 0 40" fill="none" stroke="#a855f7" stroke-opacity="0.04" stroke-width="1"/>
+  </pattern>
+  <rect width="1600" height="900" fill="url(#gridVoice)" />
+
+  <!-- Top App Navigation Bar -->
+  <rect width="1600" height="64" fill="#170c29" stroke="#2d174d" stroke-width="1" />
+  <circle cx="36" cy="32" r="14" fill="#c084fc" fill-opacity="0.2" stroke="#c084fc" stroke-width="2"/>
+  <circle cx="36" cy="32" r="6" fill="#c084fc"/>
+  <text x="64" y="38" fill="#f5f3ff" font-size="18" font-weight="700" letter-spacing="1">VOX STUDIO</text>
+  <text x="200" y="38" fill="#a78bfa" font-size="13" font-mono="true">VOICE AI AGENT PLATFORM</text>
+
+  <!-- Live Pulse Badge -->
+  <rect x="1310" y="18" width="150" height="28" rx="14" fill="#a855f7" fill-opacity="0.2" stroke="#a855f7" stroke-width="1"/>
+  <circle cx="1328" cy="32" r="4" fill="#34d399" filter="url(#purpleGlow)"/>
+  <text x="1342" y="36" fill="#f5f3ff" font-size="12" font-weight="600">&lt;500ms LATENCY</text>
+  <circle cx="1500" cy="32" r="16" fill="#c084fc" fill-opacity="0.3"/>
+  <text x="1493" y="37" fill="#f3e8ff" font-weight="700" font-size="12">AI</text>
+
+  <!-- Left Card: Voice Persona & Config -->
+  <rect x="40" y="96" width="380" height="764" rx="14" fill="url(#cardGradVoice)" stroke="#2d174d" stroke-width="1"/>
+  <text x="64" y="136" fill="#c084fc" font-size="12" font-weight="600" letter-spacing="1">AGENT PERSONA</text>
+  <text x="64" y="166" fill="#ffffff" font-size="22" font-weight="700">Maya - Support Specialist</text>
+
+  <rect x="64" y="200" width="332" height="120" rx="10" fill="#140924" stroke="#2d174d" stroke-width="1"/>
+  <text x="84" y="230" fill="#e9d5ff" font-size="13" font-weight="600">Model: Whisper + Uplift TTS v2</text>
+  <text x="84" y="255" fill="#a855f7" font-size="12">Language: English + Hindi (Hinglish)</text>
+  <text x="84" y="280" fill="#a855f7" font-size="12">Speaking Rate: 1.05x • Natural Pauses</text>
+  <text x="84" y="305" fill="#34d399" font-size="12">Interruptibility: Enabled (Human-First)</text>
+
+  <text x="64" y="360" fill="#e9d5ff" font-size="14" font-weight="600">Audio Acoustics &amp; Guardrails</text>
+  <!-- Sliders -->
+  <text x="64" y="395" fill="#c084fc" font-size="12">Tone Warmth</text>
+  <rect x="64" y="405" width="332" height="6" rx="3" fill="#2d174d"/>
+  <rect x="64" y="405" width="240" height="6" rx="3" fill="url(#purpleGrad)"/>
+  <circle cx="304" cy="408" r="7" fill="#f5f3ff"/>
+
+  <text x="64" y="445" fill="#c084fc" font-size="12">Factual Grounding Strictness</text>
+  <rect x="64" y="455" width="332" height="6" rx="3" fill="#2d174d"/>
+  <rect x="64" y="455" width="280" height="6" rx="3" fill="url(#purpleGrad)"/>
+  <circle cx="344" cy="458" r="7" fill="#f5f3ff"/>
+
+  <rect x="64" y="500" width="332" height="324" rx="10" fill="#140924" stroke="#2d174d" stroke-width="1"/>
+  <text x="84" y="534" fill="#e9d5ff" font-size="14" font-weight="600">Integrated RAG Knowledge</text>
+  <rect x="84" y="556" width="292" height="48" rx="8" fill="#1e1035"/>
+  <text x="100" y="584" fill="#f5f3ff" font-size="12">e-Commerce Returns Policy</text>
+  <rect x="84" y="614" width="292" height="48" rx="8" fill="#1e1035"/>
+  <text x="100" y="642" fill="#f5f3ff" font-size="12">Shipping &amp; Order Status API</text>
+  <rect x="84" y="672" width="292" height="48" rx="8" fill="#1e1035"/>
+  <text x="100" y="700" fill="#f5f3ff" font-size="12">Customer Loyalty Database</text>
+
+  <!-- Center Card: Audio Frequency Waveform Studio -->
+  <rect x="444" y="96" width="720" height="460" rx="14" fill="url(#cardGradVoice)" stroke="#2d174d" stroke-width="1"/>
+  <text x="472" y="136" fill="#c084fc" font-size="12" font-weight="600" letter-spacing="1">LIVE AUDIO STREAM</text>
+  <text x="472" y="166" fill="#ffffff" font-size="22" font-weight="700">Real-Time Waveform &amp; Audio Turn-Taking</text>
+
+  <!-- Waveform Center Area -->
+  <rect x="472" y="196" width="664" height="240" rx="12" fill="#120722" stroke="#2d174d" stroke-width="1"/>
+  <!-- Frequency Bars -->
+  <g transform="translate(500, 316)">
+    <rect x="0" y="-15" width="8" height="30" rx="4" fill="#a855f7" opacity="0.6"/>
+    <rect x="18" y="-35" width="8" height="70" rx="4" fill="#c084fc" opacity="0.8"/>
+    <rect x="36" y="-55" width="8" height="110" rx="4" fill="#e879f9"/>
+    <rect x="54" y="-25" width="8" height="50" rx="4" fill="#a855f7"/>
+    <rect x="72" y="-70" width="8" height="140" rx="4" fill="#f43f5e" filter="url(#purpleGlow)"/>
+    <rect x="90" y="-40" width="8" height="80" rx="4" fill="#c084fc"/>
+    <rect x="108" y="-85" width="8" height="170" rx="4" fill="#f472b6"/>
+    <rect x="126" y="-60" width="8" height="120" rx="4" fill="#e879f9"/>
+    <rect x="144" y="-30" width="8" height="60" rx="4" fill="#a855f7"/>
+    <rect x="162" y="-95" width="8" height="190" rx="4" fill="#c084fc" filter="url(#purpleGlow)"/>
+    <rect x="180" y="-75" width="8" height="150" rx="4" fill="#e879f9"/>
+    <rect x="198" y="-45" width="8" height="90" rx="4" fill="#f472b6"/>
+    <rect x="216" y="-85" width="8" height="170" rx="4" fill="#c084fc"/>
+    <rect x="234" y="-30" width="8" height="60" rx="4" fill="#a855f7"/>
+    <rect x="252" y="-65" width="8" height="130" rx="4" fill="#e879f9"/>
+    <rect x="270" y="-100" width="8" height="200" rx="4" fill="#f43f5e" filter="url(#purpleGlow)"/>
+    <rect x="288" y="-50" width="8" height="100" rx="4" fill="#c084fc"/>
+    <rect x="306" y="-80" width="8" height="160" rx="4" fill="#e879f9"/>
+    <rect x="324" y="-40" width="8" height="80" rx="4" fill="#a855f7"/>
+    <rect x="342" y="-70" width="8" height="140" rx="4" fill="#f472b6"/>
+    <rect x="360" y="-25" width="8" height="50" rx="4" fill="#c084fc"/>
+    <rect x="378" y="-60" width="8" height="120" rx="4" fill="#a855f7"/>
+    <rect x="396" y="-85" width="8" height="170" rx="4" fill="#e879f9"/>
+    <rect x="414" y="-45" width="8" height="90" rx="4" fill="#c084fc"/>
+    <rect x="432" y="-75" width="8" height="150" rx="4" fill="#f43f5e"/>
+    <rect x="450" y="-30" width="8" height="60" rx="4" fill="#a855f7"/>
+    <rect x="468" y="-55" width="8" height="110" rx="4" fill="#c084fc"/>
+    <rect x="486" y="-35" width="8" height="70" rx="4" fill="#e879f9"/>
+    <rect x="504" y="-65" width="8" height="130" rx="4" fill="#f472b6"/>
+    <rect x="522" y="-20" width="8" height="40" rx="4" fill="#a855f7"/>
+    <rect x="540" y="-45" width="8" height="90" rx="4" fill="#c084fc"/>
+    <rect x="558" y="-15" width="8" height="30" rx="4" fill="#a855f7" opacity="0.6"/>
+  </g>
+
+  <!-- Bottom Center Card: Real-Time Transcript Stream -->
+  <rect x="444" y="580" width="720" height="280" rx="14" fill="url(#cardGradVoice)" stroke="#2d174d" stroke-width="1"/>
+  <text x="472" y="616" fill="#c084fc" font-size="12" font-weight="600" letter-spacing="1">LIVE CONVERSATION TRANSCRIPT</text>
+  
+  <rect x="472" y="636" width="664" height="60" rx="8" fill="#140924"/>
+  <circle cx="496" cy="666" r="12" fill="#3b82f6"/>
+  <text x="492" y="670" fill="#ffffff" font-size="11" font-weight="700">U</text>
+  <text x="520" y="662" fill="#93c5fd" font-size="11" font-weight="600">User (00:14)</text>
+  <text x="520" y="682" fill="#e5e7eb" font-size="13">"Can I exchange the blue wool jacket for a larger size?"</text>
+
+  <rect x="472" y="708" width="664" height="64" rx="8" fill="#24103c" stroke="#a855f7" stroke-width="1"/>
+  <circle cx="496" cy="740" r="12" fill="#a855f7"/>
+  <text x="490" y="744" fill="#ffffff" font-size="11" font-weight="700">AI</text>
+  <text x="520" y="734" fill="#f5d0fe" font-size="11" font-weight="600">Maya AI Agent (00:15) • Latency 380ms</text>
+  <text x="520" y="756" fill="#f5f3ff" font-size="13">"Certainly! Your order #8291 is eligible. I can initiate the size L exchange right now."</text>
+
+  <rect x="472" y="784" width="664" height="52" rx="8" fill="#140924"/>
+  <circle cx="496" cy="810" r="12" fill="#3b82f6"/>
+  <text x="492" y="814" fill="#ffffff" font-size="11" font-weight="700">U</text>
+  <text x="520" y="806" fill="#93c5fd" font-size="11" font-weight="600">User (00:20)</text>
+  <text x="520" y="826" fill="#e5e7eb" font-size="13">"That would be great, please proceed."</text>
+
+  <!-- Right Card: Voice Call Telemetry -->
+  <rect x="1184" y="96" width="376" height="764" rx="14" fill="url(#cardGradVoice)" stroke="#2d174d" stroke-width="1"/>
+  <text x="1212" y="136" fill="#c084fc" font-size="12" font-weight="600" letter-spacing="1">METRICS &amp; TELEMETRY</text>
+  <text x="1212" y="166" fill="#ffffff" font-size="22" font-weight="700">Audio Stream Health</text>
+
+  <rect x="1212" y="200" width="320" height="100" rx="10" fill="#140924" stroke="#2d174d" stroke-width="1"/>
+  <text x="1232" y="234" fill="#a855f7" font-size="12">End-to-End Latency</text>
+  <text x="1232" y="266" fill="#34d399" font-size="28" font-weight="800">380 ms</text>
+  <text x="1480" y="266" text-anchor="end" fill="#a855f7" font-size="12">Target &lt;500ms</text>
+
+  <rect x="1212" y="316" width="320" height="100" rx="10" fill="#140924" stroke="#2d174d" stroke-width="1"/>
+  <text x="1232" y="350" fill="#a855f7" font-size="12">Audio Codec / Bitrate</text>
+  <text x="1232" y="382" fill="#ffffff" font-size="24" font-weight="700">Opus 24kHz</text>
+  <text x="1480" y="382" text-anchor="end" fill="#34d399" font-size="12">Loss 0.0%</text>
+
+  <rect x="1212" y="432" width="320" height="400" rx="10" fill="#140924" stroke="#2d174d" stroke-width="1"/>
+  <text x="1232" y="468" fill="#ffffff" font-size="16" font-weight="600">Live Agent Fleet</text>
+  <rect x="1232" y="490" width="280" height="64" rx="8" fill="#201138"/>
+  <text x="1248" y="518" fill="#ffffff" font-size="13" font-weight="600">Agent Maya</text>
+  <text x="1248" y="538" fill="#34d399" font-size="11">Active Call • Retail Inquiries</text>
+
+  <rect x="1232" y="566" width="280" height="64" rx="8" fill="#201138"/>
+  <text x="1248" y="594" fill="#ffffff" font-size="13" font-weight="600">Agent Jordan</text>
+  <text x="1248" y="614" fill="#34d399" font-size="11">Active Call • Logistics Support</text>
+
+  <rect x="1232" y="642" width="280" height="64" rx="8" fill="#201138"/>
+  <text x="1248" y="670" fill="#ffffff" font-size="13" font-weight="600">Agent Sophia</text>
+  <text x="1248" y="690" fill="#38bdf8" font-size="11">Standby • Ready for Routing</text>
+</svg>

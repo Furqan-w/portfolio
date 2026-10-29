@@ -1,0 +1,137 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 900" width="1600" height="900" style="background:#090d16; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;">
+  <defs>
+    <linearGradient id="pinkGrad" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#ec4899"/>
+      <stop offset="100%" stop-color="#be185d"/>
+    </linearGradient>
+    <linearGradient id="ragCardGrad" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#141c2e" stop-opacity="0.95"/>
+      <stop offset="100%" stop-color="#0e1422" stop-opacity="0.95"/>
+    </linearGradient>
+    <filter id="pinkGlow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="10" result="blur" />
+      <feComposite in="SourceGraphic" in2="blur" operator="over" />
+    </filter>
+  </defs>
+
+  <!-- Background subtle grid -->
+  <pattern id="gridRag" width="40" height="40" patternUnits="userSpaceOnUse">
+    <path d="M 40 0 L 0 0 0 40" fill="none" stroke="#ffffff" stroke-opacity="0.03" stroke-width="1"/>
+  </pattern>
+  <rect width="1600" height="900" fill="url(#gridRag)" />
+
+  <!-- Top App Navigation Bar -->
+  <rect width="1600" height="64" fill="#0f172a" stroke="#1e293b" stroke-width="1" />
+  <circle cx="36" cy="32" r="14" fill="#ec4899" fill-opacity="0.2" stroke="#ec4899" stroke-width="2"/>
+  <rect x="31" y="27" width="10" height="10" rx="2" fill="#ec4899"/>
+  <text x="64" y="38" fill="#f8fafc" font-size="18" font-weight="700" letter-spacing="1">NEXUS RAG</text>
+  <text x="195" y="38" fill="#ec4899" font-size="13" font-mono="true">LLMOPS &amp; AGENTIC RETRIEVAL</text>
+
+  <rect x="420" y="16" width="380" height="32" rx="8" fill="#1e293b" stroke="#334155" stroke-width="1"/>
+  <text x="440" y="37" fill="#94a3b8" font-size="13">Evaluate query: "Find lightweight waterproof trail running shoes"</text>
+
+  <!-- Live Pulse Badge -->
+  <rect x="1290" y="18" width="170" height="28" rx="14" fill="#ec4899" fill-opacity="0.15" stroke="#ec4899" stroke-width="1"/>
+  <circle cx="1308" cy="32" r="4" fill="#10b981" filter="url(#pinkGlow)"/>
+  <text x="1322" y="36" fill="#fbcfe8" font-size="12" font-weight="600">FAITHFULNESS: 0.96</text>
+  <circle cx="1500" cy="32" r="16" fill="#ec4899" fill-opacity="0.3"/>
+  <text x="1493" y="37" fill="#fbcfe8" font-weight="700" font-size="12">AI</text>
+
+  <!-- Left Card: Retrieval Precision & Observability -->
+  <rect x="40" y="96" width="380" height="764" rx="14" fill="url(#ragCardGrad)" stroke="#1e293b" stroke-width="1"/>
+  <text x="64" y="136" fill="#ec4899" font-size="12" font-weight="600" letter-spacing="1">EVALUATION METRICS</text>
+  <text x="64" y="166" fill="#ffffff" font-size="22" font-weight="700">RAG Pipeline Benchmarks</text>
+
+  <rect x="64" y="200" width="332" height="100" rx="10" fill="#0b1120" stroke="#1e293b" stroke-width="1"/>
+  <text x="84" y="234" fill="#94a3b8" font-size="12">Retrieval Precision Boost</text>
+  <text x="84" y="272" fill="#ec4899" font-size="32" font-weight="800">+8.4%</text>
+  <text x="360" y="272" text-anchor="end" fill="#10b981" font-size="12">Self-Correction</text>
+
+  <rect x="64" y="316" width="332" height="100" rx="10" fill="#0b1120" stroke="#1e293b" stroke-width="1"/>
+  <text x="84" y="350" fill="#94a3b8" font-size="12">Catalog Recall Expansion</text>
+  <text x="84" y="388" fill="#38bdf8" font-size="32" font-weight="800">+14.2%</text>
+  <text x="360" y="388" text-anchor="end" fill="#10b981" font-size="12">Multi-Vector Search</text>
+
+  <rect x="64" y="432" width="332" height="100" rx="10" fill="#0b1120" stroke="#1e293b" stroke-width="1"/>
+  <text x="84" y="466" fill="#94a3b8" font-size="12">Hallucination Rate</text>
+  <text x="84" y="504" fill="#10b981" font-size="32" font-weight="800">1.2%</text>
+  <text x="360" y="504" text-anchor="end" fill="#94a3b8" font-size="12">-82% vs Naive</text>
+
+  <rect x="64" y="548" width="332" height="284" rx="10" fill="#0b1120" stroke="#1e293b" stroke-width="1"/>
+  <text x="84" y="584" fill="#f8fafc" font-size="14" font-weight="600">Vector Store Infrastructure</text>
+  <text x="84" y="614" fill="#94a3b8" font-size="12">Weaviate Cloud Cluster: v1.26</text>
+  <text x="84" y="640" fill="#94a3b8" font-size="12">Indexed SKUs: 1.4M Products</text>
+  <text x="84" y="666" fill="#94a3b8" font-size="12">Embedding: text-embedding-3-large</text>
+  <text x="84" y="692" fill="#94a3b8" font-size="12">Distance Metric: Cosine Hybrid</text>
+  <text x="84" y="718" fill="#10b981" font-size="12">Phoenix AI Tracing: Active (100%)</text>
+
+  <!-- Center Card: Recursive Agentic RAG Execution Flow -->
+  <rect x="444" y="96" width="720" height="470" rx="14" fill="url(#ragCardGrad)" stroke="#1e293b" stroke-width="1"/>
+  <text x="472" y="136" fill="#ec4899" font-size="12" font-weight="600" letter-spacing="1">SELF-CORRECTING RETRIEVAL GRAPH</text>
+  <text x="472" y="166" fill="#ffffff" font-size="22" font-weight="700">Recursive Query Reformulation Loop</text>
+
+  <!-- Flow Visualizer -->
+  <rect x="472" y="196" width="664" height="240" rx="12" fill="#0a0f1d" stroke="#1e293b" stroke-width="1"/>
+  <!-- Node 1 -->
+  <rect x="500" y="270" width="130" height="70" rx="10" fill="#1e293b" stroke="#38bdf8" stroke-width="1.5"/>
+  <text x="565" y="302" text-anchor="middle" fill="#ffffff" font-size="12" font-weight="600">User Query</text>
+  <text x="565" y="322" text-anchor="middle" fill="#38bdf8" font-size="10">Raw Intent</text>
+
+  <!-- Arrow -->
+  <line x1="630" y1="305" x2="680" y2="305" stroke="#64748b" stroke-width="2" marker-end="url(#arrow)"/>
+  <text x="655" y="295" text-anchor="middle" fill="#64748b" font-size="10">embed</text>
+
+  <!-- Node 2 -->
+  <rect x="680" y="270" width="140" height="70" rx="10" fill="#1e293b" stroke="#ec4899" stroke-width="1.5"/>
+  <text x="750" y="302" text-anchor="middle" fill="#ffffff" font-size="12" font-weight="600">Weaviate RAG</text>
+  <text x="750" y="322" text-anchor="middle" fill="#ec4899" font-size="10">Hybrid Retrieval</text>
+
+  <!-- Arrow -->
+  <line x1="820" y1="305" x2="870" y2="305" stroke="#64748b" stroke-width="2"/>
+  <text x="845" y="295" text-anchor="middle" fill="#64748b" font-size="10">top-k</text>
+
+  <!-- Node 3 -->
+  <rect x="870" y="270" width="150" height="70" rx="10" fill="#1e293b" stroke="#10b981" stroke-width="1.5"/>
+  <text x="945" y="302" text-anchor="middle" fill="#ffffff" font-size="12" font-weight="600">Query Evaluator</text>
+  <text x="945" y="322" text-anchor="middle" fill="#10b981" font-size="10">Confidence Score: 0.94</text>
+
+  <!-- Cyclic Loop Line -->
+  <path d="M 945 270 C 945 220, 750 220, 750 265" fill="none" stroke="#ec4899" stroke-width="1.5" stroke-dasharray="4"/>
+  <text x="848" y="235" text-anchor="middle" fill="#ec4899" font-size="10">Self-Correction Reformulation</text>
+
+  <!-- Bottom Center Card: Phoenix AI Hallucination & Faithfulness Log -->
+  <rect x="444" y="590" width="720" height="270" rx="14" fill="url(#ragCardGrad)" stroke="#1e293b" stroke-width="1"/>
+  <text x="472" y="626" fill="#ec4899" font-size="12" font-weight="600" letter-spacing="1">PHOENIX AI OBSERVABILITY</text>
+  
+  <rect x="472" y="646" width="664" height="190" rx="10" fill="#090d16" stroke="#1e293b" stroke-width="1"/>
+  <text x="496" y="678" fill="#10b981" font-size="12" font-mono="true">✓ Trace #phx-91823: Faithfulness Score 0.96 (Threshold &gt; 0.85)</text>
+  <text x="496" y="704" fill="#38bdf8" font-size="12" font-mono="true">→ Retrieval Context: 8 relevant catalog products fetched in 42ms</text>
+  <text x="496" y="730" fill="#94a3b8" font-size="12" font-mono="true">→ Context Precision: 0.91 • Context Recall: 0.89</text>
+  <text x="496" y="756" fill="#fde047" font-size="12" font-mono="true">→ LLM Token Usage: 1,120 prompt tokens | 240 completion tokens</text>
+  <text x="496" y="782" fill="#10b981" font-size="12" font-mono="true">→ Response verified: No ungrounded pricing or dimension claims</text>
+
+  <!-- Right Card: Latency & Telemetry -->
+  <rect x="1184" y="96" width="376" height="764" rx="14" fill="url(#ragCardGrad)" stroke="#1e293b" stroke-width="1"/>
+  <text x="1212" y="136" fill="#ec4899" font-size="12" font-weight="600" letter-spacing="1">LLMOPS METRICS</text>
+  <text x="1212" y="166" fill="#ffffff" font-size="22" font-weight="700">Cluster Telemetry</text>
+
+  <rect x="1212" y="200" width="320" height="120" rx="10" fill="#0b1120" stroke="#1e293b" stroke-width="1"/>
+  <text x="1232" y="234" fill="#94a3b8" font-size="12">Average Query Latency</text>
+  <text x="1232" y="272" fill="#38bdf8" font-size="32" font-weight="800">185 ms</text>
+  <text x="1500" y="272" text-anchor="end" fill="#10b981" font-size="12">P95: 310ms</text>
+
+  <rect x="1212" y="336" width="320" height="496" rx="10" fill="#0b1120" stroke="#1e293b" stroke-width="1"/>
+  <text x="1232" y="372" fill="#ffffff" font-size="16" font-weight="600">Evaluated Query Categories</text>
+  
+  <rect x="1232" y="394" width="280" height="64" rx="8" fill="#162035"/>
+  <text x="1248" y="422" fill="#ffffff" font-size="13" font-weight="600">Product Dimension Queries</text>
+  <text x="1248" y="442" fill="#10b981" font-size="11">99.4% Precision • 0 hallucination</text>
+
+  <rect x="1232" y="470" width="280" height="64" rx="8" fill="#162035"/>
+  <text x="1248" y="498" fill="#ffffff" font-size="13" font-weight="600">Compatibility Comparisons</text>
+  <text x="1248" y="518" fill="#10b981" font-size="11">96.8% Precision • Multi-hop</text>
+
+  <rect x="1232" y="546" width="280" height="64" rx="8" fill="#162035"/>
+  <text x="1248" y="574" fill="#ffffff" font-size="13" font-weight="600">Returns &amp; Warranty Policies</text>
+  <text x="1248" y="594" fill="#10b981" font-size="11">100% Policy Compliance</text>
+</svg>
