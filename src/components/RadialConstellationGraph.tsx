@@ -2,24 +2,34 @@
 
 import { useState, useRef, useEffect, useCallback } from "react";
 
-// Exact SVG templates for the constellation portfolio
-export function CenterStarburst({ className = "w-10 h-10" }: { className?: string }) {
+// Custom "FU" Monogram Logo
+export function CenterLogo({ className = "w-10 h-10" }: { className?: string }) {
   return (
-    <svg viewBox="0 0 40 40" className={className}>
+    <svg
+      id="svg-logo-3"
+      viewBox="0 0 300 300"
+      className={className}
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <rect width="300" height="300" fill="none" />
+      {/* 'f' Stem flowing down into a smooth 'u' basin, then ascending right */}
       <path
-        d="M 20.586 38.736 C 18.089 39.23 17.742 35.377 17.881 33.389 C 17.187 35.583 15.176 39.765 12.679 38.942 C 10.182 38.119 11.638 33.663 12.679 31.538 C 11.777 32.566 9.433 34.458 7.269 33.8 C 5.105 33.142 7.477 29.687 8.933 28.041 C 7.685 29.138 4.522 30.838 1.859 28.864 C -0.805 26.89 3.939 24.202 6.644 23.105 C 4.98 23.379 1.526 23.311 1.026 20.843 C 0.527 18.375 4.425 17.895 6.436 17.963 C 4.356 17.072 0.36 14.755 1.026 12.616 C 1.692 10.477 6.159 11.862 8.309 12.822 C 7.061 11.519 4.938 8.544 6.436 7.063 C 7.934 5.582 10.667 7.817 11.846 9.119 C 10.667 7.2 8.933 3.032 11.43 1.715 C 13.927 0.399 16.077 4.458 16.84 6.651 C 16.979 4.8 17.714 1.139 19.545 1.304 C 21.376 1.468 21.973 4.938 22.042 6.652 C 23.013 4.184 25.454 -0.341 27.452 1.304 C 29.45 2.95 28.146 6.789 27.244 8.502 C 28.492 7.406 31.364 5.459 32.862 6.446 C 34.36 7.433 32.377 10.559 31.197 11.999 C 33.417 10.902 38.022 9.325 38.688 11.793 C 39.354 14.261 35.22 16.387 33.07 17.141 C 34.735 17.072 38.23 17.429 38.896 19.403 C 39.562 21.378 35.567 22.008 33.486 22.077 C 35.706 22.9 39.895 25.121 38.896 27.424 C 37.898 29.728 33.625 28.384 31.614 27.424 C 32.862 28.727 35.026 31.661 33.694 32.978 C 32.363 34.294 29.394 32.292 28.076 31.127 C 29.325 33.32 31.114 37.873 28.284 38.531 C 25.454 39.189 23.499 35.24 22.874 33.183 C 23.152 34.829 23.083 38.243 20.586 38.736 Z"
-        fill="#0088ff"
+        className="logo-path"
+        d="M 175,60 C 125,60 110,90 110,130 L 110,190 C 110,225 135,245 165,245 C 195,245 220,225 220,190 L 220,130"
+        fill="none"
+        stroke="#18181B"
+        strokeWidth="26"
+        strokeLinecap="round"
+        strokeLinejoin="round"
       />
-    </svg>
-  );
-}
-
-export function SidebarStarburst({ className = "w-[26px] h-[26px]" }: { className?: string }) {
-  return (
-    <svg viewBox="0 0 26 26" className={className}>
+      {/* Crossbar extending across the 'f' stem */}
       <path
-        d="M 13.369 24.804 C 11.796 25.115 11.577 22.688 11.665 21.435 C 11.228 22.817 9.961 25.452 8.388 24.933 C 6.814 24.415 7.732 21.608 8.388 20.269 C 7.819 20.917 6.343 22.109 4.979 21.694 C 3.616 21.279 5.11 19.103 6.028 18.066 C 5.241 18.757 3.249 19.828 1.571 18.584 C -0.107 17.34 2.882 15.647 4.586 14.956 C 3.537 15.129 1.361 15.086 1.047 13.531 C 0.732 11.976 3.188 11.674 4.455 11.717 C 3.144 11.155 0.627 9.696 1.047 8.348 C 1.466 7 4.28 7.873 5.635 8.478 C 4.848 7.657 3.511 5.782 4.455 4.849 C 5.399 3.917 7.12 5.325 7.863 6.145 C 7.12 4.936 6.028 2.31 7.601 1.481 C 9.174 0.651 10.529 3.208 11.009 4.59 C 11.097 3.424 11.56 1.118 12.713 1.221 C 13.867 1.325 14.243 3.511 14.287 4.591 C 14.898 3.036 16.436 0.185 17.695 1.222 C 18.953 2.258 18.132 4.677 17.564 5.757 C 18.35 5.065 20.159 3.839 21.103 4.461 C 22.047 5.083 20.797 7.052 20.054 7.959 C 21.453 7.268 24.354 6.275 24.774 7.83 C 25.193 9.385 22.589 10.724 21.234 11.199 C 22.283 11.155 24.485 11.38 24.905 12.624 C 25.324 13.868 22.807 14.265 21.496 14.309 C 22.895 14.827 25.534 16.226 24.905 17.677 C 24.275 19.129 21.584 18.282 20.317 17.677 C 21.103 18.498 22.466 20.347 21.628 21.176 C 20.788 22.005 18.918 20.744 18.088 20.01 C 18.875 21.392 20.002 24.26 18.219 24.674 C 16.436 25.089 15.204 22.601 14.811 21.305 C 14.986 22.342 14.942 24.493 13.369 24.804 Z"
-        fill="#0088ff"
+        className="logo-accent-path"
+        d="M 75,130 L 165,130"
+        fill="none"
+        stroke="#18181B"
+        strokeWidth="26"
+        strokeLinecap="round"
       />
     </svg>
   );
@@ -128,7 +138,7 @@ export const PORTFOLIO_NODES: NodeDef[] = [
   {
     id: "center",
     name: "Furqan Waris",
-    subtitle: "Pakistan",
+    subtitle: "",
     shape: "hexagon",
     type: "center",
     actionId: "center",
@@ -236,14 +246,14 @@ export const PORTFOLIO_NODES: NodeDef[] = [
     type: "widget",
     actionId: "watch",
   },
-  {
-    id: "read",
-    name: "Read",
-    subtitle: "Book recommendations for you",
-    shape: "square",
-    type: "widget",
-    actionId: "read",
-  },
+  // {
+  //   id: "read",
+  //   name: "Read",
+  //   subtitle: "Book recommendations for you",
+  //   shape: "square",
+  //   type: "widget",
+  //   actionId: "read",
+  // },
   {
     id: "bucket-list",
     name: "Bucket List",
@@ -280,11 +290,12 @@ export default function RadialConstellationGraph({
   const [size, setSize] = useState({ width: 0, height: 0 });
   const [hoveredIdx, setHoveredIdx] = useState<number | null>(null);
 
-  // Layout polar coordinates: node 0 at center radius 0, 15 satellites around
+  // Layout polar coordinates: node 0 at center radius 0, satellites around
   const initialLayout = useRef(
     PORTFOLIO_NODES.map((_, i) => {
       if (i === 0) return { angle: 0, radius: 0 };
-      const angle = ((i - 1) / 15) * Math.PI * 2 + (Math.sin(i * 1.7) * 0.3);
+      const satelliteCount = Math.max(1, PORTFOLIO_NODES.length - 1);
+      const angle = ((i - 1) / satelliteCount) * Math.PI * 2 + (Math.sin(i * 1.7) * 0.3);
       const radius = 220 + (i % 3) * 65;
       return { angle, radius };
     })
@@ -624,7 +635,7 @@ export default function RadialConstellationGraph({
             }}
             className="flex items-center gap-2.5 cursor-pointer py-1"
           >
-            <SidebarStarburst className="w-[26px] h-[26px] shrink-0" />
+            <CenterLogo className="w-[26px] h-[26px] shrink-0" />
             <span className="font-medium text-[15px] tracking-tight text-[#181616]">
               Furqan Waris
             </span>
@@ -635,10 +646,10 @@ export default function RadialConstellationGraph({
           {/* Bio */}
           <p className="text-[13px] leading-[1.38] text-[#666666] tracking-tight">
             Full-Stack AI Engineer specializing in applied artificial intelligence, RAG pipelines, and agentic workflows.
-            Currently building production AI systems at{" "}
-            <span className="text-[#181919] font-medium underline underline-offset-2">
+            Currently building production AI systems
+            {/* <span className="text-[#181919] font-medium underline underline-offset-2">
               QTO Dev
-            </span>
+            </span> */}
             .
           </p>
 
@@ -805,23 +816,15 @@ export default function RadialConstellationGraph({
               {isCenter ? (
                 /* CENTER NODE - CLEAN & SEAMLESS, NO WRAPPER BOX OR BORDER */
                 <div className="flex flex-col items-center justify-center">
-                  {/* Clean Starburst Icon */}
+                  {/* Clean Logo Icon */}
                   <div className="transition-transform duration-200 hover:scale-105">
-                    <CenterStarburst className="w-10 h-10 animate-[spin_60s_linear_infinite]" />
+                    <CenterLogo className="w-10 h-10" />
                   </div>
 
                   {/* Clean Title */}
                   <div className="mt-1">
                     <span className="font-medium text-[15px] tracking-tight text-[#181616]">
                       Furqan Waris
-                    </span>
-                  </div>
-
-                  {/* Clean Location Badge */}
-                  <div className="mt-0.5 flex items-center gap-1">
-                    <LocationPinIcon className="w-3.5 h-3.5 text-[#888888]" />
-                    <span className="text-[13px] text-[#888888] font-normal tracking-tight">
-                      Pakistan
                     </span>
                   </div>
                 </div>

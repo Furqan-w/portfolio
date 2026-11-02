@@ -91,9 +91,9 @@ export interface PortfolioData {
   contact: {
     email: string;
     linkedin: string;
-    framer: string;
-    x: string;
-    github: string;
+    framer?: string;
+    x?: string;
+    github?: string;
   };
   toolkit: { name: string; category: string; level: string }[];
   experiences: ExperienceItem[];
@@ -101,7 +101,7 @@ export interface PortfolioData {
   certifications: CertificationItem[];
   recommendations: {
     films: RecommendationItem[];
-    books: RecommendationItem[];
+    books?: RecommendationItem[];
     tracks: RecommendationItem[];
   };
   bucketList: { text: string; done: boolean }[];
@@ -119,9 +119,9 @@ export const PORTFOLIO_DATA: PortfolioData = {
   contact: {
     email: "furqanwaris82@gmail.com",
     linkedin: "https://linkedin.com/in/furqan-waris-b8782426a",
-    framer: "https://framer.com",
-    x: "https://x.com",
-    github: "https://github.com",
+    // framer: "https://framer.com",
+    // x: "https://x.com",
+    // github: "https://github.com",
   },
   toolkit: [
     { name: "Python", category: "Language", level: "Daily" },
@@ -186,26 +186,52 @@ export const PORTFOLIO_DATA: PortfolioData = {
   ],
   recommendations: {
     films: [
-      { title: "Interstellar", creator: "Christopher Nolan", category: "watch", year: "2014", note: "A breathtaking journey through space, time, love, and the limits of human perseverance." },
-      { title: "Chashme Buddoor", creator: "Sai Paranjpye", category: "watch", year: "1981", note: "Pure Delhi warmth and comedic genius." },
-      { title: "Chhoti Si Baat", creator: "Basu Chatterjee", category: "watch", year: "1976", note: "Timeless slice of life about quiet longing." },
-      { title: "Ankhon Dekhi", creator: "Rajat Kapoor", category: "watch", year: "2013", note: "A gentle masterclass in seeing the world firsthand." },
-      { title: "Masaan", creator: "Neeraj Ghaywan", category: "watch", year: "2015", note: "Grief, poetry, and redemption on the Banaras ghats." },
-      { title: "Dev.D", creator: "Anurag Kashyap", category: "watch", year: "2009", note: "Electrifying reinvention of Indian cinema language." },
-      { title: "Oye Lucky! Lucky Oye!", creator: "Dibakar Banerjee", category: "watch", year: "2008", note: "Sharp social observation wrapped in humor." },
-      { title: "The Worst Person in the World", creator: "Joachim Trier", category: "watch", year: "2021", note: "Navigating twenties with grace, chaos and heartbreak." },
-      { title: "Udaan", creator: "Vikramaditya Motwane", category: "watch", year: "2010", note: "The anthem of adolescent liberation and dreams." },
+      {
+        title: "Interstellar",
+        creator: "Christopher Nolan",
+        category: "watch",
+        year: "2014",
+        note: "A breathtaking odyssey through spacetime, relativity, and love as a quantifiable force."
+      },
+      {
+        title: "X-Men: Days of Future Past",
+        creator: "Bryan Singer",
+        category: "watch",
+        year: "2014",
+        note: "A masterclass in timeline convergence, exploring mutant evolution, prejudice, and destiny."
+      },
+      {
+        title: "Avengers: Endgame",
+        creator: "Anthony & Joe Russo",
+        category: "watch",
+        year: "2019",
+        note: "The monumental culmination of a decade-long saga, balancing grief, heroism, and closure."
+      },
+      {
+        title: "Predestination",
+        creator: "The Spierig Brothers",
+        category: "watch",
+        year: "2014",
+        note: "A brilliant, mind-bending temporal paradox based on Robert A. Heinlein's 'All You Zombies'."
+      },
+      {
+        title: "Drishyam",
+        creator: "Nishikant Kamat",
+        category: "watch",
+        year: "2015",
+        note: "A gripping psychological suspense drama about a family man defending his loved ones through sheer wit."
+      },
     ],
-    books: [
-      { title: "Sapiens", creator: "Yuval Noah Harari", category: "read", note: "How cognitive revolutions shaped human mythmaking." },
-      { title: "How to Feed the World", creator: "Vaclav Smil", category: "read", note: "Grounded engineering look at humanity's greatest machine." },
-      { title: "Sophie's World", creator: "Jostein Gaarder", category: "read", note: "A whimsical doorway into two millennia of philosophical inquiry." },
-      { title: "India After Gandhi", creator: "Ramachandra Guha", category: "read", note: "The epic story of the world's most unlikely democracy." },
-      { title: "Raag Darbari", creator: "Srilal Shukla", category: "read", note: "Biting satire of rural bureaucracy and realpolitik." },
-      { title: "The Great Indian Brain Rot", creator: "Anurag Minus Verma", category: "read", note: "Modern cultural commentary on internet subcultures." },
-      { title: "The White Tiger", creator: "Aravind Adiga", category: "read", note: "Raw, dark energy of modern social stratification." },
-      { title: "Annapurna", creator: "Maurice Herzog", category: "read", note: "Human endurance at the edge of the world's first 8,000m climb." },
-    ],
+    // books: [
+    //   { title: "Sapiens", creator: "Yuval Noah Harari", category: "read", note: "How cognitive revolutions shaped human mythmaking." },
+    //   { title: "How to Feed the World", creator: "Vaclav Smil", category: "read", note: "Grounded engineering look at humanity's greatest machine." },
+    //   { title: "Sophie's World", creator: "Jostein Gaarder", category: "read", note: "A whimsical doorway into two millennia of philosophical inquiry." },
+    //   { title: "India After Gandhi", creator: "Ramachandra Guha", category: "read", note: "The epic story of the world's most unlikely democracy." },
+    //   { title: "Raag Darbari", creator: "Srilal Shukla", category: "read", note: "Biting satire of rural bureaucracy and realpolitik." },
+    //   { title: "The Great Indian Brain Rot", creator: "Anurag Minus Verma", category: "read", note: "Modern cultural commentary on internet subcultures." },
+    //   { title: "The White Tiger", creator: "Aravind Adiga", category: "read", note: "Raw, dark energy of modern social stratification." },
+    //   { title: "Annapurna", creator: "Maurice Herzog", category: "read", note: "Human endurance at the edge of the world's first 8,000m climb." },
+    // ],
     tracks: [
       { title: "Daylight Memories", creator: "Kavinsky / Synthwave", category: "listen", note: "Focus flow playlist" },
       { title: "Kashmir Mountain Breeze", creator: "Ambient Acoustic", category: "listen", note: "Late night work state" },
@@ -213,12 +239,11 @@ export const PORTFOLIO_DATA: PortfolioData = {
     ],
   },
   bucketList: [
-    { text: "Summit a 6,000m peak in the Himalayas", done: false },
-    { text: "Design and ship a full operating system shell", done: false },
-    { text: "Publish an independent physical philosophy zine", done: false },
-    { text: "Drive solo through the Spiti Valley circuit", done: true },
-    { text: "Master hand-wheel ceramic pottery", done: false },
-    { text: "Build a product used by over 10 million people", done: true },
+    { text: "Have a deep conversation with a stranger I'll never meet again", done: false },
+    { text: "Watch 100 greatest films ever made", done: true },
+    { text: "Spend a night under a million stars", done: true },
+    { text: "See the Milky Way with my own eyes", done: false },
+    { text: "Spend a whole day doing absolutely nothing", done: true },
   ],
   testimonials: [],
   projects: [
@@ -228,7 +253,7 @@ export const PORTFOLIO_DATA: PortfolioData = {
       subtitle: "Domain-specific Llama fine-tuning for astronomy Q&A using LoRA and PyTorch.",
       category: "LLM Fine-Tuning & GenAI",
       company: "Astrophysics AI",
-      year: "2025",
+      year: "2026",
       timeline: "5 weeks",
       role: "AI Engineer",
       team: ["Sole Researcher & Developer"],
@@ -290,7 +315,7 @@ export const PORTFOLIO_DATA: PortfolioData = {
       subtitle: "Autonomous multi-step reasoning, stateful workflows, and dynamic tool calling.",
       category: "Multi-Agent Systems & LangGraph",
       company: "Enterprise AI",
-      year: "2025",
+      year: "2026",
       timeline: "8 weeks",
       role: "AI Architect",
       team: ["AI Engineer", "Backend Lead"],
@@ -351,7 +376,7 @@ export const PORTFOLIO_DATA: PortfolioData = {
       subtitle: "Machine learning screening application with semantic resume matching and hybrid retrieval.",
       category: "Semantic Search & RAG",
       company: "HR Tech",
-      year: "2025",
+      year: "2026",
       timeline: "6 weeks",
       role: "Full-Stack AI Engineer",
       team: ["AI Engineer", "Product Designer"],
@@ -397,7 +422,7 @@ export const PORTFOLIO_DATA: PortfolioData = {
       subtitle: "Dynamic web scraper crawling project listings across 1,000+ target websites with automated error-recovery.",
       category: "Data Pipelines & Automation",
       company: "Data Ingestion Tech",
-      year: "2025",
+      year: "2026",
       timeline: "5 weeks",
       role: "Backend & AI Engineer",
       team: ["Sole Engineer"],
@@ -440,7 +465,7 @@ export const PORTFOLIO_DATA: PortfolioData = {
       subtitle: "Dynamic voice-assistant platform with guardrails and RAG-based domain knowledge.",
       category: "Conversational Voice AI",
       company: "AI Agent Platform",
-      year: "2025",
+      year: "2026",
       timeline: "6 weeks",
       role: "AI Engineer",
       team: ["AI Engineer", "Frontend Developer"],
@@ -482,7 +507,7 @@ export const PORTFOLIO_DATA: PortfolioData = {
       subtitle: "Agentic RAG featuring intelligent query routing, self-correction, and Phoenix AI observability.",
       category: "Agentic RAG & LLMOps",
       company: "E-Commerce Tech",
-      year: "2025",
+      year: "2026",
       timeline: "6 weeks",
       role: "AI Engineer",
       team: ["Lead AI Engineer"],

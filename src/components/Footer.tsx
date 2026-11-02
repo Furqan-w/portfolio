@@ -111,30 +111,46 @@ export default function Footer() {
             <span className="text-[11px] uppercase tracking-wider text-neutral-400 font-semibold">
               Connect
             </span>
-            <a
-              href={PORTFOLIO_DATA.contact.linkedin}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="flex items-center gap-1 hover:text-black transition-colors"
-            >
-              LinkedIn <ArrowUpRight className="w-3 h-3" />
-            </a>
-            <a
-              href={PORTFOLIO_DATA.contact.framer}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="flex items-center gap-1 hover:text-black transition-colors"
-            >
-              Framer <ArrowUpRight className="w-3 h-3" />
-            </a>
-            <a
-              href={PORTFOLIO_DATA.contact.x}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="flex items-center gap-1 hover:text-black transition-colors"
-            >
-              X / Twitter <ArrowUpRight className="w-3 h-3" />
-            </a>
+            {PORTFOLIO_DATA.contact.linkedin && (
+              <a
+                href={PORTFOLIO_DATA.contact.linkedin}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center gap-1 hover:text-black transition-colors"
+              >
+                LinkedIn <ArrowUpRight className="w-3 h-3" />
+              </a>
+            )}
+            {PORTFOLIO_DATA.contact.github && (
+              <a
+                href={PORTFOLIO_DATA.contact.github}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center gap-1 hover:text-black transition-colors"
+              >
+                GitHub <ArrowUpRight className="w-3 h-3" />
+              </a>
+            )}
+            {PORTFOLIO_DATA.contact.framer && (
+              <a
+                href={PORTFOLIO_DATA.contact.framer}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center gap-1 hover:text-black transition-colors"
+              >
+                Framer <ArrowUpRight className="w-3 h-3" />
+              </a>
+            )}
+            {PORTFOLIO_DATA.contact.x && (
+              <a
+                href={PORTFOLIO_DATA.contact.x}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center gap-1 hover:text-black transition-colors"
+              >
+                X / Twitter <ArrowUpRight className="w-3 h-3" />
+              </a>
+            )}
           </div>
         </div>
 

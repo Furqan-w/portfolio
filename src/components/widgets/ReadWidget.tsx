@@ -6,8 +6,10 @@ import { PORTFOLIO_DATA } from "@/data/portfolioData";
 
 export default function ReadWidget() {
   const [activeBookIndex, setActiveBookIndex] = useState(0);
-  const books = PORTFOLIO_DATA.recommendations.books;
+  const books = PORTFOLIO_DATA.recommendations.books || [];
   const current = books[activeBookIndex];
+
+  if (!current) return null;
 
   return (
     <div className="p-5 rounded-2xl bg-white border border-neutral-200/90 shadow-xs flex flex-col justify-between h-full group hover:border-neutral-300 transition-all duration-300">

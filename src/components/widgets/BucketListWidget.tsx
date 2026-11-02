@@ -46,7 +46,6 @@ export default function BucketListWidget() {
 
       <div className="mt-4 pt-3 border-t border-neutral-100 flex items-center justify-between text-[11px] text-neutral-400">
         <span>Curiosity over comfort</span>
-        <span className="text-neutral-500">🏔️ High altitude</span>
       </div>
     </div>
   );

@@ -52,7 +52,7 @@ export default function ProjectCard({
 
             <div className="z-10 flex justify-between items-end text-xs text-violet-300 font-mono">
               <span className="uppercase tracking-wider">{project.company}</span>
-              <span>2025</span>
+              <span>{project.year}</span>
             </div>
           </div>
         );

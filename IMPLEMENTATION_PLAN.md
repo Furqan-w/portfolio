@@ -1,26 +1,29 @@
-# Implementation Plan: Connect Resume Download Button to PDF
+# Implementation Plan: Remove Pakistan Location Badge from Center Node
 
-## 1. Overview
-The user provided their actual resume PDF at `public/Furqan_resume.pdf`. The task is to update the download button in the portfolio so clicking it directly downloads or opens this PDF file.
-
----
-
-## 2. Proposed Changes
-
-### File: `src/components/SinglePageModal.tsx`
-- **Location**: Line 231-237 (in the `activeItem.id === "resume"` section).
-- **Current Behavior**: A `<button>` that triggers `window.print()` with label "Print / Save PDF".
-- **New Behavior**: An `<a>` anchor tag:
-  - `href={`${process.env.NEXT_PUBLIC_BASE_PATH || ""}/Furqan_resume.pdf`}`
-  - `download="Furqan_resume.pdf"`
-  - `target="_blank"`
-  - `rel="noopener noreferrer"`
-  - Label: `Download Resume` (with `<Download />` icon).
-  - Handles the GitHub Pages `basePath` automatically both locally and in production (`/portfolio/Furqan_resume.pdf`).
+## 1. Requirement
+The user requested removing the "Pakistan" location from the interface (the location badge displayed on the main constellation center node).
 
 ---
 
-## 3. Verification Steps
-- Verify `public/Furqan_resume.pdf` is present and accessible.
-- Verify `SinglePageModal.tsx` renders valid semantic JSX without typescript/lint errors.
-- Test static build (`npm run build`) to ensure export includes `Furqan_resume.pdf` in `out/`.
+## 2. Planned Changes
+
+### `src/components/RadialConstellationGraph.tsx`
+1. **Remove Location Pin & Label**:
+   Remove lines 831-837 in the center node render block:
+   ```tsx
+   {/* Clean Location Badge */}
+   <div className="mt-0.5 flex items-center gap-1">
+     <LocationPinIcon className="w-3.5 h-3.5 text-[#888888]" />
+     <span className="text-[13px] text-[#888888] font-normal tracking-tight">
+       Pakistan
+     </span>
+   </div>
+   ```
+2. **Update Center Node Definition**:
+   Set `subtitle: ""` in `PORTFOLIO_NODES` for the center node.
+
+---
+
+## 3. Verification
+- Verify `npm run build` static export succeeds with zero errors.
+- Confirm the center node on the canvas displays only the custom logo and "Furqan Waris" without the location pin or text.
