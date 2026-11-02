@@ -228,13 +228,16 @@ export default function SinglePageModal({
                     <h2 className="font-serif italic text-3xl text-neutral-900">{PORTFOLIO_DATA.name}</h2>
                     <p className="text-xs text-neutral-500 font-mono mt-1">Full-Stack AI Engineer • RAG, Multi-Agent Systems & Production AI</p>
                   </div>
-                  <button
-                    onClick={() => window.print()}
-                    className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-[#181616] text-white text-xs font-medium hover:bg-neutral-800 transition-colors"
+                  <a
+                    href={`${process.env.NEXT_PUBLIC_BASE_PATH || ""}/Furqan_resume.pdf`}
+                    download="Furqan_resume.pdf"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-[#181616] text-white text-xs font-medium hover:bg-neutral-800 transition-colors cursor-pointer"
                   >
                     <Download className="w-3.5 h-3.5" />
-                    <span>Print / Save PDF</span>
-                  </button>
+                    <span>Download Resume</span>
+                  </a>
                 </div>
 
                 <div className="space-y-6 text-xs text-neutral-800">

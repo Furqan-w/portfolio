@@ -1,54 +1,26 @@
-# Implementation Plan: GitHub Pages Deployment
+# Implementation Plan: Connect Resume Download Button to PDF
 
 ## 1. Overview
-The goal is to enable automated deployment of Furqan Waris's portfolio to GitHub Pages from the repository `Furqan-w/portfolio`.
-
-Site Target URL: `https://furqan-w.github.io/portfolio/`
+The user provided their actual resume PDF at `public/Furqan_resume.pdf`. The task is to update the download button in the portfolio so clicking it directly downloads or opens this PDF file.
 
 ---
 
-## 2. Key Challenges & Solutions
+## 2. Proposed Changes
 
-| Challenge | Solution |
-| :--- | :--- |
-| **Static Hosting Requirement** | GitHub Pages only serves static assets. Configure Next.js for static export (`output: 'export'`). |
-| **Subpath Asset Resolution** | The site is hosted under `/portfolio/` instead of domain root. Configure `basePath` and `assetPrefix` in production. |
-| **Jekyll Ignoring `_next/`** | GitHub Pages runs Jekyll by default, ignoring folders prefixed with `_`. We must include a `.nojekyll` file or upload via GitHub Pages Actions. |
-| **Image Resolution in `<img>`** | Cover image URLs in `portfolioData.ts` start with `/projects/...`. Update `ProjectCard.tsx` to prepend `basePath` in production so images don't 404. |
-| **Next.js 16 Config Compatibility** | Remove server-only experimental flags like `partialPrefetching` when using `output: 'export'`. Set `images.unoptimized: true`. |
-
----
-
-## 3. Step-by-Step Implementation Steps
-
-### Step 1: Update `next.config.ts`
-- Set `output: 'export'`.
-- Set `images: { unoptimized: true }`.
-- Set conditional `basePath` for production (`/portfolio`).
-- Expose `NEXT_PUBLIC_BASE_PATH` in `env` for client-side asset path resolution.
-
-### Step 2: Handle Asset Paths in Components
-- In `src/components/ProjectCard.tsx`, ensure `project.coverImage` prepends `process.env.NEXT_PUBLIC_BASE_PATH || ''`.
-
-### Step 3: Create GitHub Actions Workflow
-- Create `.github/workflows/deploy.yml` configured to:
-  - Trigger on push to `main` (or manual dispatch).
-  - Check out repository.
-  - Setup Node.js with caching (`npm`).
-  - Run `npm ci` and `npm run build`.
-  - Add `.nojekyll` to the `out` directory.
-  - Upload artifact via `actions/upload-pages-artifact@v3`.
-  - Deploy to GitHub Pages via `actions/deploy-pages@v4`.
-
-### Step 4: Verification & Test Build
-- Run `npm run build` locally to verify:
-  - Clean static export into `out/` folder.
-  - No routing or build errors.
-  - Output files and assets are properly generated.
+### File: `src/components/SinglePageModal.tsx`
+- **Location**: Line 231-237 (in the `activeItem.id === "resume"` section).
+- **Current Behavior**: A `<button>` that triggers `window.print()` with label "Print / Save PDF".
+- **New Behavior**: An `<a>` anchor tag:
+  - `href={`${process.env.NEXT_PUBLIC_BASE_PATH || ""}/Furqan_resume.pdf`}`
+  - `download="Furqan_resume.pdf"`
+  - `target="_blank"`
+  - `rel="noopener noreferrer"`
+  - Label: `Download Resume` (with `<Download />` icon).
+  - Handles the GitHub Pages `basePath` automatically both locally and in production (`/portfolio/Furqan_resume.pdf`).
 
 ---
 
-## 4. User Action Required in GitHub Repository Settings
-Once pushed to GitHub:
-1. Go to repository **Settings** -> **Pages**.
-2. Under **Build and deployment** -> **Source**, select **GitHub Actions**.
+## 3. Verification Steps
+- Verify `public/Furqan_resume.pdf` is present and accessible.
+- Verify `SinglePageModal.tsx` renders valid semantic JSX without typescript/lint errors.
+- Test static build (`npm run build`) to ensure export includes `Furqan_resume.pdf` in `out/`.
