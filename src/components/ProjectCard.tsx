@@ -312,7 +312,11 @@ export default function ProjectCard({
         {project.coverImage ? (
           <div className="w-full h-full relative overflow-hidden">
             <img
-              src={project.coverImage}
+              src={
+                project.coverImage.startsWith("/")
+                  ? `${process.env.NEXT_PUBLIC_BASE_PATH || ""}${project.coverImage}`
+                  : project.coverImage
+              }
               alt={project.title}
               className="w-full h-full object-cover object-top transition-transform duration-700 ease-out group-hover:scale-105"
             />
