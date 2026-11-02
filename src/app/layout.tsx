@@ -23,12 +23,16 @@ const caveat = Caveat({
   display: "swap",
 });
 
+const basePath = process.env.NEXT_PUBLIC_BASE_PATH || "";
+
 export const metadata: Metadata = {
   title: "Furqan Waris - Portfolio",
   description:
     "Full-Stack AI Engineer and Computer Science graduate skilled in bridging modern web architectures with applied artificial intelligence. Adept at building end-to-end, AI-powered applications.",
   icons: {
-    icon: "/favicon.ico",
+    icon: `${basePath}/icon.svg`,
+    shortcut: `${basePath}/icon.svg`,
+    apple: `${basePath}/icon.svg`,
   },
   openGraph: {
     title: "Furqan Waris - Portfolio",

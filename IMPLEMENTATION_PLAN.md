@@ -1,29 +1,30 @@
-# Implementation Plan: Remove Pakistan Location Badge from Center Node
+# Implementation Plan: Replace Default Tab Favicon with Custom FU Monogram Logo
 
 ## 1. Requirement
-The user requested removing the "Pakistan" location from the interface (the location badge displayed on the main constellation center node).
+The user requested replacing the default browser tab icon (which currently shows the fallback globe icon on GitHub Pages / dev) with their custom **FU** monogram logo.
 
 ---
 
 ## 2. Planned Changes
 
-### `src/components/RadialConstellationGraph.tsx`
-1. **Remove Location Pin & Label**:
-   Remove lines 831-837 in the center node render block:
-   ```tsx
-   {/* Clean Location Badge */}
-   <div className="mt-0.5 flex items-center gap-1">
-     <LocationPinIcon className="w-3.5 h-3.5 text-[#888888]" />
-     <span className="text-[13px] text-[#888888] font-normal tracking-tight">
-       Pakistan
-     </span>
-   </div>
-   ```
-2. **Update Center Node Definition**:
-   Set `subtitle: ""` in `PORTFOLIO_NODES` for the center node.
+### 1. Create `src/app/icon.svg` and `public/icon.svg`
+Create the SVG favicon using the user's custom monogram logo:
+- Include `@media (prefers-color-scheme: dark)` styling so the logo stroke is visible in both dark browser tabs (like the user's browser) and light browser tabs:
+  - Dark tabs: Crisp white/light-zinc `#F4F4F5`
+  - Light tabs: Sleek dark `#18181B`
+- Place in `src/app/icon.svg` (Next.js built-in metadata icon) and `public/icon.svg`.
+
+### 2. Update `src/app/layout.tsx`
+- Update `metadata.icons` to point to the new SVG icon with `process.env.NEXT_PUBLIC_BASE_PATH`:
+  ```ts
+  icons: {
+    icon: `${process.env.NEXT_PUBLIC_BASE_PATH || ""}/icon.svg`,
+  },
+  ```
+  This ensures that both locally on `http://localhost:3000` and on GitHub Pages (`/portfolio/`), the browser tab icon resolves without 404s.
 
 ---
 
 ## 3. Verification
-- Verify `npm run build` static export succeeds with zero errors.
-- Confirm the center node on the canvas displays only the custom logo and "Furqan Waris" without the location pin or text.
+- Verify `npm run build` succeeds with zero errors.
+- Verify generated `out/index.html` has `<link rel="icon" ...>` pointing to the custom icon.

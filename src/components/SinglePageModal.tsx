@@ -1,8 +1,8 @@
 "use client";
 
-import { useEffect } from "react";
+import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
-import { X, ArrowLeft, ArrowUpRight, Send, Download } from "lucide-react";
+import { X, ArrowLeft, ArrowUpRight, Mail, Copy, Check, Download } from "lucide-react";
 import { PORTFOLIO_DATA } from "@/data/portfolioData";
 import CaseStudyLayout from "./CaseStudyLayout";
 import ProjectCard from "./ProjectCard";
@@ -26,6 +26,14 @@ export default function SinglePageModal({
   onClose,
   onSelectProject,
 }: SinglePageModalProps) {
+  const [copiedEmail, setCopiedEmail] = useState(false);
+
+  const handleCopyEmail = () => {
+    navigator.clipboard.writeText(PORTFOLIO_DATA.contact.email);
+    setCopiedEmail(true);
+    setTimeout(() => setCopiedEmail(false), 2000);
+  };
+
   // Close on Escape key
   useEffect(() => {
     const handleKeyDown = (e: KeyboardEvent) => {
@@ -229,8 +237,8 @@ export default function SinglePageModal({
                     <p className="text-xs text-neutral-500 font-mono mt-1">Full-Stack AI Engineer • RAG, Multi-Agent Systems & Production AI</p>
                   </div>
                   <a
-                    href={`${process.env.NEXT_PUBLIC_BASE_PATH || ""}/Furqan_resume.pdf`}
-                    download="Furqan_resume.pdf"
+                    href={`${process.env.NEXT_PUBLIC_BASE_PATH || ""}/Furqan_Resume.pdf`}
+                    download="Furqan_Resume.pdf"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-[#181616] text-white text-xs font-medium hover:bg-neutral-800 transition-colors cursor-pointer"
@@ -288,58 +296,71 @@ export default function SinglePageModal({
             )}
 
             {activeItem.id === "contact" && (
-              <div className="max-w-xl mx-auto space-y-6">
+              <div className="max-w-md mx-auto space-y-6 text-center py-4">
                 <div>
                   <span className="text-xs font-mono uppercase tracking-widest text-neutral-400 font-bold block">
                     Get in touch
                   </span>
                   <h2 className="font-serif italic text-3xl text-neutral-900 mt-1">
-                    My inbox is open
+                    Let&apos;s Connect
                   </h2>
-                  <p className="text-xs text-neutral-600 mt-1">
-                    Have an idea, project, or want to talk mountains and movies? Drop a message!
+                  <p className="text-xs text-neutral-600 mt-2 leading-relaxed">
+                    Have an opportunity, collaboration idea, or want to discuss applied AI systems? Feel free to reach out directly.
                   </p>
                 </div>
 
-                <form
-                  onSubmit={(e) => {
-                    e.preventDefault();
-                    alert("Message sent! Thanks for reaching out.");
-                    onClose();
-                  }}
-                  className="space-y-3"
-                >
-                  <input
-                    type="text"
-                    required
-                    placeholder="Your Name"
-                    className="w-full px-4 py-2.5 rounded-lg bg-[#f5f6f3] border border-[#88888826] text-xs text-neutral-900 focus:outline-none focus:border-neutral-900"
-                  />
-                  <input
-                    type="email"
-                    required
-                    placeholder="Your Email"
-                    className="w-full px-4 py-2.5 rounded-lg bg-[#f5f6f3] border border-[#88888826] text-xs text-neutral-900 focus:outline-none focus:border-neutral-900"
-                  />
-                  <textarea
-                    required
-                    rows={4}
-                    placeholder="Your Message..."
-                    className="w-full px-4 py-2.5 rounded-lg bg-[#f5f6f3] border border-[#88888826] text-xs text-neutral-900 focus:outline-none focus:border-neutral-900 resize-none"
-                  />
-                  <button
-                    type="submit"
-                    className="w-full py-2.5 rounded-full bg-[#181616] text-white text-xs font-semibold hover:bg-neutral-800 transition-colors flex items-center justify-center gap-1.5 shadow-xs"
-                  >
-                    <span>Send message</span>
-                    <Send className="w-3.5 h-3.5" />
-                  </button>
-                </form>
+                <div className="p-6 rounded-2xl bg-[#f5f6f3] border border-[#88888826] space-y-4 shadow-xs">
+                  <div className="flex flex-col items-center gap-1.5">
+                    <span className="text-[11px] font-mono uppercase tracking-wider text-neutral-400 font-medium">
+                      Direct Email
+                    </span>
+                    <a
+                      href={`mailto:${PORTFOLIO_DATA.contact.email}`}
+                      className="text-base sm:text-lg font-mono font-medium text-neutral-900 hover:text-blue-600 transition-colors break-all"
+                    >
+                      {PORTFOLIO_DATA.contact.email}
+                    </a>
+                  </div>
 
-                <div className="pt-2 text-center">
-                  <p className="text-xs text-neutral-500 font-mono">
-                    Direct email: {PORTFOLIO_DATA.contact.email}
-                  </p>
+                  <div className="flex flex-wrap items-center justify-center gap-2.5 pt-2">
+                    <a
+                      href={`mailto:${PORTFOLIO_DATA.contact.email}`}
+                      className="inline-flex items-center gap-1.5 px-4 py-2 rounded-full bg-[#181616] text-white text-xs font-medium hover:bg-neutral-800 transition-colors shadow-xs"
+                    >
+                      <Mail className="w-3.5 h-3.5" />
+                      <span>Write Email</span>
+                    </a>
+
+                    <button
+                      type="button"
+                      onClick={handleCopyEmail}
+                      className="inline-flex items-center gap-1.5 px-4 py-2 rounded-full bg-white border border-neutral-200 text-neutral-800 text-xs font-medium hover:bg-neutral-100 transition-colors shadow-xs cursor-pointer"
+                    >
+                      {copiedEmail ? (
+                        <>
+                          <Check className="w-3.5 h-3.5 text-emerald-600" />
+                          <span className="text-emerald-700">Copied!</span>
+                        </>
+                      ) : (
+                        <>
+                          <Copy className="w-3.5 h-3.5 text-neutral-500" />
+                          <span>Copy Email</span>
+                        </>
+                      )}
+                    </button>
+
+                    {PORTFOLIO_DATA.contact.linkedin && (
+                      <a
+                        href={PORTFOLIO_DATA.contact.linkedin}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="inline-flex items-center gap-1.5 px-4 py-2 rounded-full bg-white border border-neutral-200 text-neutral-800 text-xs font-medium hover:bg-neutral-100 transition-colors shadow-xs"
+                      >
+                        <span>LinkedIn</span>
+                        <ArrowUpRight className="w-3.5 h-3.5 text-neutral-400" />
+                      </a>
+                    )}
+                  </div>
                 </div>
               </div>
             )}

@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 300" width="100%" height="100%">
+  <style>
+    .logo-path, .logo-accent-path {
+      stroke: #18181B;
+    }
+    @media (prefers-color-scheme: dark) {
+      .logo-path, .logo-accent-path {
+        stroke: #F4F4F5;
+      }
+    }
+  </style>
+  <rect width="300" height="300" fill="none" />
+  <!-- 'f' Stem flowing down into a smooth 'u' basin, then ascending right -->
+  <path class="logo-path" d="M 175,60 C 125,60 110,90 110,130 L 110,190 C 110,225 135,245 165,245 C 195,245 220,225 220,190 L 220,130" fill="none" stroke-width="28" stroke-linecap="round" stroke-linejoin="round" />
+  <!-- Crossbar extending across the 'f' stem -->
+  <path class="logo-accent-path" d="M 75,130 L 165,130" fill="none" stroke-width="28" stroke-linecap="round" />
+</svg>
